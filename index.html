@@ -111,6 +111,39 @@ p.sheet-sub{font-size:.95rem;font-style:italic;color:var(--ink2);margin-bottom:1
 #pp-btns .pp-del:hover{color:var(--bad);border-color:var(--bad)}
 .empty-note{font-style:italic;color:var(--ink3);padding:10px 0 14px 26px;font-size:.95rem}
 
+/* ── SHARE PILL (submit song to community library) ── */
+#share-pill{display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:4px 12px;
+  border-radius:14px;border:1.5px solid var(--brass);background:rgba(176,141,87,.15);
+  color:#e9e0c8;font-size:.72rem;font-family:'Special Elite',cursive;
+  letter-spacing:.03em;cursor:pointer;transition:background .15s}
+#share-pill:hover{background:rgba(176,141,87,.28)}
+#share-pill.hidden{display:none}
+#share-pill.is-done{cursor:default;border-color:var(--ok-b);background:rgba(63,107,70,.18);color:#dcefe0}
+#share-pill.is-done:hover{background:rgba(63,107,70,.18)}
+
+/* ── SHARE CONFIRM MODAL (reuses challenge-modal token palette) ── */
+#share-overlay{position:fixed;inset:0;background:rgba(30,28,22,.65);z-index:900;
+  display:flex;align-items:center;justify-content:center;padding:1rem}
+#share-overlay.hidden{display:none}
+#share-modal{background:#f6f0df;border:2px solid var(--brass);border-radius:12px;
+  width:100%;max-width:420px;box-shadow:0 8px 40px rgba(40,30,10,.35);
+  padding:22px 22px 18px;display:flex;flex-direction:column;gap:12px}
+#share-modal h3{font-family:'IM Fell English',serif;font-size:1.25rem;color:var(--ink)}
+#share-modal .sh-song{font-weight:600;color:var(--ink);font-size:1.02rem}
+#share-modal .sh-meta{font-size:.78rem;color:var(--ink3)}
+#share-modal .sh-note{font-size:.82rem;color:var(--ink2);line-height:1.55;
+  background:var(--paper2);border-radius:6px;padding:10px 12px}
+#share-modal .sh-btns{display:flex;gap:10px;justify-content:flex-end;margin-top:4px}
+
+/* ── COMMUNITY LIBRARY SCREEN ── */
+#community-list{display:flex;flex-direction:column;gap:8px;max-height:60vh;overflow-y:auto;padding-right:4px}
+.comm-card{background:#f6f0df;border:1.5px solid var(--paper-line);border-radius:6px;
+  padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.comm-card:hover{border-color:var(--brass)}
+.comm-title{font-size:1rem;font-weight:600;color:var(--ink)}
+.comm-meta{font-size:.78rem;color:var(--ink3);margin-top:2px}
+.comm-card .comm-import-btn{flex-shrink:0}
+
 /* ── CHALLENGE MODAL ── */
 #challenge-overlay{position:fixed;inset:0;background:rgba(30,28,22,.65);z-index:900;
   display:flex;align-items:center;justify-content:center;padding:1rem}
@@ -586,6 +619,7 @@ textarea{min-height:130px;line-height:1.7}
   <h1 id="brand">Laulupaja</h1>
   <div class="sub">· Song Workshop · Listen · Arrange · Inflect ·</div>
   <div id="song-title-lbl"></div>
+  <div id="share-pill" class="hidden">🌱 Share this song</div>
 </div>
 
 <div id="level-tabs" class="hidden">
@@ -617,6 +651,7 @@ textarea{min-height:130px;line-height:1.7}
       <button class="btn btn-ghost" id="demo-btn">Try demo song</button>
       <button class="btn btn-brass" id="new-song-btn">+ Import a song</button>
       <button class="btn btn-ghost" id="library-btn">📚 Library</button>
+      <button class="btn btn-ghost" id="community-btn">🌐 Community Songs</button>
     </div>
   </div>
 
@@ -651,6 +686,30 @@ textarea{min-height:130px;line-height:1.7}
     </div>
     <div id="lib-list"></div>
     <div id="lib-quiz" class="hidden"></div>
+  </div>
+
+  <!-- ══ COMMUNITY LIBRARY ══ -->
+  <div class="screen" id="community-screen">
+    <h2 class="sheet-title">🌐 Community Songs</h2>
+    <p class="sheet-sub">Songs shared by other players. Import one to add it to your own garden — you can add your own translation afterward.</p>
+    <div id="community-controls" class="btn-row">
+      <button class="btn btn-ghost" id="community-back-btn">← Back</button>
+    </div>
+    <div id="community-list"></div>
+  </div>
+
+  <!-- ══ SHARE CONFIRM MODAL ══ -->
+  <div id="share-overlay" class="hidden">
+    <div id="share-modal">
+      <h3>Share this song?</h3>
+      <div class="sh-song" id="share-title"></div>
+      <div class="sh-meta" id="share-wordcount"></div>
+      <div class="sh-note">Your song's tagged lyrics, timing, and verbs will be copied — no translation is included. GitHub will open with a prefilled title: just <b>paste into the body</b> and click <b>Submit new issue</b>. It becomes public in the community library once it passes review.</div>
+      <div class="sh-btns">
+        <button class="btn btn-ghost" id="share-cancel-btn">Cancel</button>
+        <button class="btn btn-brass" id="share-confirm-btn">Submit</button>
+      </div>
+    </div>
   </div>
 
   <!-- ══ IMPORT ══ -->
@@ -1573,6 +1632,7 @@ function clozeBlank(line, word){
 async function renderHome(){
   await renderGarden();
   $('song-title-lbl').textContent='';
+  $('share-pill').classList.add('hidden');
   showScreen('home-screen');
   // auto-popup daily challenge
   setTimeout(()=>tryShowChallenge(), 600);
@@ -1586,6 +1646,151 @@ async function saveSong(){
   if(!meta) songsIndex.unshift({id:song.id, title:song.title, language:song.language});
   else { meta.title = song.title; meta.language = song.language; }
   await saveIndex();
+}
+
+// ═══════════════════════════════════════════════════
+// COMMUNITY LIBRARY — share songs / import shared songs
+// ═══════════════════════════════════════════════════
+const COMM_REPO_OWNER = 'thuyan66', COMM_REPO_NAME = 'Sing-ShadowFinnishApp';
+const COMM_DATA_URL = `https://raw.githubusercontent.com/${COMM_REPO_OWNER}/${COMM_REPO_NAME}/main/data/fi.json`;
+let communitySongsCache = null;
+
+async function fetchCommunityLibrary(force){
+  if(communitySongsCache && !force) return communitySongsCache;
+  try{
+    const res = await fetch(COMM_DATA_URL, { cache:'no-store' });
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    communitySongsCache = Array.isArray(data) ? data : [];
+  }catch(e){
+    communitySongsCache = null; // signals "couldn't reach it", distinct from "empty"
+  }
+  return communitySongsCache;
+}
+
+async function renderCommunityScreen(){
+  showScreen('community-screen');
+  const list = $('community-list');
+  list.innerHTML = '<div class="empty-note">Loading community songs…</div>';
+  const songs = await fetchCommunityLibrary(true);
+  list.innerHTML = '';
+  if(songs === null){
+    list.innerHTML = '<div class="empty-note">Could not reach the community library right now — check your connection and try again.</div>';
+    return;
+  }
+  if(!songs.length){
+    list.innerHTML = '<div class="empty-note">No community songs yet — finish a couple levels on any song to unlock sharing!</div>';
+    return;
+  }
+  songs.forEach(entry=>{
+    const card = document.createElement('div'); card.className='comm-card';
+    const lineCount = (entry.verses||[]).reduce((n,vs)=>n+(vs.lines?vs.lines.length:0),0);
+    card.innerHTML = `<div>
+        <div class="comm-title">${esc(entry.title||'Untitled')}</div>
+        <div class="comm-meta">${lineCount} line${lineCount===1?'':'s'}</div>
+      </div>
+      <button class="btn btn-brass comm-import-btn">+ Import</button>`;
+    card.querySelector('.comm-import-btn').addEventListener('click', ()=>importCommunitySong(entry));
+    list.appendChild(card);
+  });
+}
+
+async function importCommunitySong(entry){
+  const localSong = {
+    id: null, title: entry.title, language:'Finnish', bcp47: entry.bcp47 || 'fi-FI',
+    rtl:false, nonLatin:false, videoId: entry.videoId,
+    verses: (entry.verses||[]).map(vs=>({
+      lines: (vs.lines||[]).map(l=>({
+        text: l.text, roman:null, english:'',
+        start: (typeof l.start === 'number') ? l.start : null,
+        end: (typeof l.end === 'number') ? l.end : null,
+        verbs: (l.verbs||[]).map(vb=>({
+          surface: vb.surface, infinitive: vb.infinitive, infinitiveRoman:null,
+          options: (vb.options||[]).map(o=>({form:o.form, roman:null}))
+        }))
+      }))
+    }))
+  };
+  song = normalizeSongTexts(localSong);
+  await saveSong();
+  toast('Imported — add your own translation anytime via ✎ Edit text');
+  startGame();
+}
+
+function songWordCount(s){
+  let n=0;
+  s.verses.forEach(vs=>vs.lines.forEach(l=>{ n += (l.text||'').trim().split(/\s+/).filter(Boolean).length; }));
+  return n;
+}
+
+function buildSharePayload(s){
+  return {
+    title: s.title, videoId: s.videoId, bcp47: s.bcp47 || 'fi-FI',
+    verses: s.verses.map(vs=>({
+      lines: vs.lines.map(l=>({
+        text: l.text, start: l.start, end: l.end,
+        verbs: (l.verbs||[]).map(vb=>({
+          surface: vb.surface, infinitive: vb.infinitive,
+          options: (vb.options||[]).map(o=>({form:o.form}))
+        }))
+      }))
+    }))
+  };
+}
+
+async function updateSharePill(){
+  const pill = $('share-pill');
+  if(!song || !song.id || !song.videoId){ pill.classList.add('hidden'); return; }
+  const prog = await loadGardenProgress();
+  const levels = (prog[song.id] && prog[song.id].levels) || [];
+  const reachedL2 = levels.includes(2) || completedLevels.has(2);
+  if(!reachedL2){ pill.classList.add('hidden'); return; }
+  const submitted = (await store.get('community-submitted')) || {};
+  pill.classList.remove('hidden');
+  if(submitted[song.id]){
+    pill.classList.add('is-done');
+    pill.textContent = '✅ Submitted — pending review';
+    pill.onclick = null;
+  } else {
+    pill.classList.remove('is-done');
+    pill.textContent = '🌱 Share this song';
+    pill.onclick = openShareModal;
+  }
+}
+
+function openShareModal(){
+  if(!song) return;
+  $('share-title').textContent = song.title;
+  $('share-wordcount').textContent = songWordCount(song) + ' words';
+  $('share-overlay').classList.remove('hidden');
+}
+function closeShareModal(){ $('share-overlay').classList.add('hidden'); }
+
+async function confirmShare(){
+  const payload = buildSharePayload(song);
+  // Compact JSON — issue bodies have a ~65k char limit; a full song fits easily.
+  const bodyText = `Submitting this song to the community Finnish library.\n\nPlease do not edit the block below — it is parsed automatically.\n\n\`\`\`json\n${JSON.stringify(payload)}\n\`\`\`\n`;
+  const title = '[Song Submission] ' + song.title;
+  // Prefilled-URL body would exceed GitHub's URL limit for any real song,
+  // so the designed flow is: copy body → open issue with title prefilled → user pastes once.
+  try{
+    await navigator.clipboard.writeText(bodyText);
+  }catch(e){
+    toast('Could not copy to clipboard — please allow clipboard access and try again.');
+    return;
+  }
+  const url = `https://github.com/${COMM_REPO_OWNER}/${COMM_REPO_NAME}/issues/new?title=${encodeURIComponent(title)}`;
+  const opened = window.open(url, '_blank');
+  if(!opened){
+    toast('Popup blocked — song data is copied; open GitHub Issues manually and paste.');
+    return;
+  }
+  toast('Song copied! Paste it into the issue body on GitHub, then click Submit new issue.');
+  const submitted = (await store.get('community-submitted')) || {};
+  submitted[song.id] = true;
+  await store.set('community-submitted', submitted);
+  closeShareModal();
+  await updateSharePill();
 }
 
 // ═══════ AI ANALYSIS (Claude API — artifact or user-key mode) ═══════
@@ -3284,6 +3489,7 @@ function next(){
     verseIdx=0;
     completedLevels.add(level);
     gardenMarkLevel(song.id, level); // persist to garden
+    updateSharePill();
     const avail = availableLevels();
     const nxt = avail.find(l=>l>level && !completedLevels.has(l)) ?? avail.find(l=>!completedLevels.has(l));
     if(nxt===undefined){ showWin(); return }
@@ -3319,6 +3525,7 @@ function startGame(){
   songSolvedLines = new Set();
   $('song-title-lbl').textContent = song.title + ' · ' + song.language;
   showScreen('game-screen');
+  updateSharePill();
   if(song.videoId && ytState==='unloaded'){
     // load in background; playLine() checks availability live, so no restart needed
     loadYT(song.videoId, ok=>{ if(!ok) toast('Video unavailable here — using spoken audio'); });
@@ -3331,6 +3538,10 @@ $('brand').addEventListener('click', ()=>{ stopAudio(); renderHome(); });
 $('new-song-btn').addEventListener('click', beginImport);
 $('demo-btn').addEventListener('click', ()=>{ song=normalizeSongTexts(JSON.parse(JSON.stringify(DEMO_SONG))); startGame(); });
 $('library-btn').addEventListener('click', renderLibrary);
+$('community-btn').addEventListener('click', renderCommunityScreen);
+$('community-back-btn').addEventListener('click', renderHome);
+$('share-cancel-btn').addEventListener('click', closeShareModal);
+$('share-confirm-btn').addEventListener('click', confirmShare);
 $('home-fab').addEventListener('click', ()=>{ stopAudio(); spkCleanup(); renderHome(); });
 $('lib-back-btn').addEventListener('click', renderHome);
 $('lib-quiz-btn').addEventListener('click', startVerbQuiz);
