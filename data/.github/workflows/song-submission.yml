@@ -2,7 +2,7 @@ name: Song Submission
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
 
 permissions:
   contents: write
@@ -20,4 +20,7 @@ jobs:
       - name: Validate, dedupe, and merge submission
         uses: actions/github-script@v7
         with:
-          script-path: .github/scripts/process-submission.js
+          script: |
+            const path = require('path');
+            const run = require(path.join(process.env.GITHUB_WORKSPACE, '.github', 'scripts', 'process-submission.js'));
+            await run({ github, context, core });
