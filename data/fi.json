@@ -589,5 +589,442 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Kello löi jo viisi",
+    "videoId": "Z7v7sTyQX9E",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-08T22:21:42.766Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "kello löi jo viisi lapset herätkää",
+            "start": 10.584945001907348,
+            "end": 15.600000000000001,
+            "verbs": [
+              {
+                "surface": "löi",
+                "infinitive": "lyödä",
+                "options": [
+                  {
+                    "form": "lyö"
+                  },
+                  {
+                    "form": "lyönyt"
+                  },
+                  {
+                    "form": "lyövät"
+                  },
+                  {
+                    "form": "löi"
+                  }
+                ]
+              },
+              {
+                "surface": "herätkää",
+                "infinitive": "herätä",
+                "options": [
+                  {
+                    "form": "herään"
+                  },
+                  {
+                    "form": "heräsi"
+                  },
+                  {
+                    "form": "herätkää"
+                  },
+                  {
+                    "form": "heräävät"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "juhani ja liisi muuten matka jää",
+            "start": 15.600000000000001,
+            "end": 20.824226049591065,
+            "verbs": [
+              {
+                "surface": "jää",
+                "infinitive": "jäädä",
+                "options": [
+                  {
+                    "form": "jään"
+                  },
+                  {
+                    "form": "jää"
+                  },
+                  {
+                    "form": "jäi"
+                  },
+                  {
+                    "form": "jäävät"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tässä vesimalja silmät huuhtokaa",
+            "start": 20.824226049591065,
+            "end": 25.81257105531311,
+            "verbs": [
+              {
+                "surface": "huuhtokaa",
+                "infinitive": "huuhdella",
+                "options": [
+                  {
+                    "form": "huuhtelen"
+                  },
+                  {
+                    "form": "huuhtoo"
+                  },
+                  {
+                    "form": "huuhtokaa"
+                  },
+                  {
+                    "form": "huuhtoivat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "lämmin karhuntalja reessä odottaa",
+            "start": 25.81257105531311,
+            "end": 30.822422032424928,
+            "verbs": [
+              {
+                "surface": "odottaa",
+                "infinitive": "odottaa",
+                "options": [
+                  {
+                    "form": "odotan"
+                  },
+                  {
+                    "form": "odottaa"
+                  },
+                  {
+                    "form": "odotti"
+                  },
+                  {
+                    "form": "odottavat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "vasta ruunan reessä silmät aukeaa",
+            "start": 30.822422032424928,
+            "end": 35.915498933242795,
+            "verbs": [
+              {
+                "surface": "aukeaa",
+                "infinitive": "aueta",
+                "options": [
+                  {
+                    "form": "aukean"
+                  },
+                  {
+                    "form": "aukeaa"
+                  },
+                  {
+                    "form": "aukenee"
+                  },
+                  {
+                    "form": "aukesi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "siin on silmäin eessä synkkä metsämaa",
+            "start": 35.915498933242795,
+            "end": 50.5,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "ovat"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "aisakello helkkää loistaa tähdet kuu",
+            "start": 50.5,
+            "end": 55.66461007247925,
+            "verbs": [
+              {
+                "surface": "helkkää",
+                "infinitive": "helkätä",
+                "options": [
+                  {
+                    "form": "helkkää"
+                  },
+                  {
+                    "form": "helkkäsi"
+                  },
+                  {
+                    "form": "helkkäisi"
+                  },
+                  {
+                    "form": "helkätä"
+                  }
+                ]
+              },
+              {
+                "surface": "loistaa",
+                "infinitive": "loistaa",
+                "options": [
+                  {
+                    "form": "loistaa"
+                  },
+                  {
+                    "form": "loisti"
+                  },
+                  {
+                    "form": "loistaisi"
+                  },
+                  {
+                    "form": "loistavat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "riemua on pelkkää hymyyn kävi suu",
+            "start": 55.66461007247925,
+            "end": 60.821783019073486,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisi"
+                  },
+                  {
+                    "form": "ovat"
+                  }
+                ]
+              },
+              {
+                "surface": "kävi",
+                "infinitive": "käydä",
+                "options": [
+                  {
+                    "form": "kävi"
+                  },
+                  {
+                    "form": "käy"
+                  },
+                  {
+                    "form": "kävisi"
+                  },
+                  {
+                    "form": "käyvät"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tuosta mökin miina kulkee kirkolle",
+            "start": 60.821783019073486,
+            "end": 65.69188502670288,
+            "verbs": [
+              {
+                "surface": "kulkee",
+                "infinitive": "kulkea",
+                "options": [
+                  {
+                    "form": "kulkee"
+                  },
+                  {
+                    "form": "kulki"
+                  },
+                  {
+                    "form": "kulkeisi"
+                  },
+                  {
+                    "form": "kulkevat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "taavetti ja tiina nouskaa kannoille",
+            "start": 65.69188502670288,
+            "end": 70.88499683978272,
+            "verbs": [
+              {
+                "surface": "nouskaa",
+                "infinitive": "nousta",
+                "options": [
+                  {
+                    "form": "nouskaa"
+                  },
+                  {
+                    "form": "nousee"
+                  },
+                  {
+                    "form": "nousi"
+                  },
+                  {
+                    "form": "nousisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "mäenrinteen alla talo törröttää",
+            "start": 70.88499683978272,
+            "end": 75.99575997138977,
+            "verbs": [
+              {
+                "surface": "törröttää",
+                "infinitive": "törröttää",
+                "options": [
+                  {
+                    "form": "törröttää"
+                  },
+                  {
+                    "form": "törrötti"
+                  },
+                  {
+                    "form": "törröttäisi"
+                  },
+                  {
+                    "form": "törröttävät"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "joka ikkunalla kaksi kynttilää",
+            "start": 75.99575997138977,
+            "end": 90.54798990844726,
+            "verbs": []
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "ruuna virsta vielä",
+            "start": 90.54798990844726,
+            "end": 93.42287902861023,
+            "verbs": []
+          },
+          {
+            "text": "tepsuttele pois",
+            "start": 93.42287902861023,
+            "end": 95.87826004386902,
+            "verbs": [
+              {
+                "surface": "tepsuttele",
+                "infinitive": "tepsutella",
+                "options": [
+                  {
+                    "form": "tepsuttele"
+                  },
+                  {
+                    "form": "tepsuttelen"
+                  },
+                  {
+                    "form": "tepsutteli"
+                  },
+                  {
+                    "form": "tepsuttelisit"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tällä kirkkotiellä",
+            "start": 95.87826004386902,
+            "end": 98.33933098855591,
+            "verbs": []
+          },
+          {
+            "text": "aina olla vois",
+            "start": 98.33933098855591,
+            "end": 101.53549013542175,
+            "verbs": [
+              {
+                "surface": "olla",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "olla"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisin"
+                  }
+                ]
+              },
+              {
+                "surface": "vois",
+                "infinitive": "voida",
+                "options": [
+                  {
+                    "form": "vois"
+                  },
+                  {
+                    "form": "voin"
+                  },
+                  {
+                    "form": "voi"
+                  },
+                  {
+                    "form": "voisin"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
