@@ -144,6 +144,17 @@ p.sheet-sub{font-size:.95rem;font-style:italic;color:var(--ink2);margin-bottom:1
 .comm-meta{font-size:.78rem;color:var(--ink3);margin-top:2px}
 .comm-card .comm-import-btn{flex-shrink:0}
 
+/* ── TRANSLATION EDITOR ── */
+#trans-edit-list{display:flex;flex-direction:column;gap:10px;max-height:60vh;overflow-y:auto;padding-right:4px}
+.te-row{background:#f6f0df;border:1.5px solid var(--paper-line);border-radius:6px;padding:10px 12px}
+.te-row:hover{border-color:var(--brass)}
+.te-orig{font-size:.95rem;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:4px}
+.te-roman{font-size:.78rem;color:var(--ink3);font-style:italic;margin-bottom:4px}
+.te-input{width:100%;font-family:'Crimson Pro',serif;font-size:.92rem;color:var(--ink);
+  border:1px solid var(--paper-line);background:#fbf6e8;border-radius:4px;padding:6px 8px}
+.te-input:focus{outline:none;border-color:var(--brass-dark)}
+.te-input::placeholder{color:var(--ink3);font-style:italic}
+
 /* ── CHALLENGE MODAL ── */
 #challenge-overlay{position:fixed;inset:0;background:rgba(30,28,22,.65);z-index:900;
   display:flex;align-items:center;justify-content:center;padding:1rem}
@@ -766,6 +777,17 @@ textarea{min-height:130px;line-height:1.7}
     </div>
   </div>
 
+  <!-- ══ TRANSLATION EDITOR ══ -->
+  <div class="screen" id="trans-edit-screen">
+    <h2 class="sheet-title">🌐 Add Translation</h2>
+    <p class="sheet-sub">Type a translation for each line. No AI needed — your changes save instantly. Leave blank for lines you're unsure about.</p>
+    <div id="trans-edit-list"></div>
+    <div class="btn-row">
+      <button class="btn btn-ghost" id="trans-edit-cancel-btn">← Cancel</button>
+      <button class="btn btn-brass" id="trans-edit-save-btn">Save translations</button>
+    </div>
+  </div>
+
   <!-- ══ TAGGER ══ -->
   <div class="screen" id="tagger-screen">
     <h2 class="sheet-title">Tag the Lines</h2>
@@ -793,6 +815,7 @@ textarea{min-height:130px;line-height:1.7}
       <div id="task-lbl"></div>
     </div>
     <div id="edit-row">
+      <button class="edit-btn" id="edit-trans-btn" title="Add or edit translations for each line (no AI needed)">🌐 Add translation</button>
       <button class="edit-btn" id="edit-text-btn" title="Go back and edit the lyrics / translation (re-runs the AI analysis)">✎ Edit text</button>
       <button class="edit-btn" id="edit-tags-btn" title="Go back and adjust the audio timestamps">⏱ Edit tags</button>
     </div>
@@ -883,7 +906,7 @@ function showScreen(id){
   $(id).classList.add('active');
   $('level-tabs').classList.toggle('hidden', id!=='game-screen');
   $('sheet').classList.toggle('tabs-on', id==='game-screen');
-  document.body.classList.toggle('rtl', !!(song && song.rtl) && (id==='game-screen'||id==='review-screen'||id==='tagger-screen'));
+  document.body.classList.toggle('rtl', !!(song && song.rtl) && (id==='game-screen'||id==='review-screen'||id==='tagger-screen'||id==='trans-edit-screen'));
   const fab=$('home-fab'); if(fab) fab.classList.toggle('hidden', id==='home-screen');
 }
 
@@ -1334,11 +1357,13 @@ async function aggregateVerbs(){
         // Only the form actually sung/used in this line — never the invented
         // quiz-distractor options (those aren't real content the player encountered).
         verbs[key].forms.add(vb.surface);
-        verbs[key].songs.set(meta.id, meta.title);
-        // capture the sentence (line) this word appears in, deduped
-        const dedupeKey = meta.id+'|'+line.text;
-        if(line.text && !verbs[key].seen.has(dedupeKey)){
-          verbs[key].seen.add(dedupeKey);
+        verbs[key].songs.set((meta.title||'').trim().toLowerCase(), meta.title);
+        // A + Y: keep exactly ONE example sentence per word per SONG (by title,
+        // so re-imports of the same song under new ids don't create duplicates).
+        // A different song using the same word contributes its own one example.
+        const songKey = (meta.title||'').trim().toLowerCase();
+        if(line.text && !verbs[key].seen.has(songKey)){
+          verbs[key].seen.add(songKey);
           verbs[key].sentences.push({ text:line.text, surface:vb.surface, song:meta.title, english:line.english||'', roman:line.roman||null });
         }
       });
@@ -1640,6 +1665,41 @@ async function renderHome(){
   setTimeout(()=>tryShowChallenge(), 600);
 }
 
+// ═══════ TRANSLATION-ONLY EDITOR (no AI, no re-analysis) ═══════
+function openTransEditor(){
+  if(!song) return;
+  stopAudio();
+  const list = $('trans-edit-list'); list.innerHTML = '';
+  song.verses.forEach((vs, vi) => {
+    const lbl = document.createElement('div');
+    lbl.className = 'rv-verse-lbl'; lbl.textContent = `Verse ${vi+1}`;
+    list.appendChild(lbl);
+    vs.lines.forEach((line, li) => {
+      const row = document.createElement('div'); row.className = 'te-row';
+      let html = `<div class="te-orig">${esc(line.text)}</div>`;
+      if(line.roman) html += `<div class="te-roman">${esc(line.roman)}</div>`;
+      html += `<input class="te-input" type="text" data-vi="${vi}" data-li="${li}" placeholder="Translation…" value="${esc(line.english || '')}">`;
+      row.innerHTML = html;
+      list.appendChild(row);
+    });
+  });
+  showScreen('trans-edit-screen');
+}
+
+async function saveTranslations(){
+  const inputs = document.querySelectorAll('#trans-edit-list .te-input');
+  inputs.forEach(inp => {
+    const vi = parseInt(inp.dataset.vi);
+    const li = parseInt(inp.dataset.li);
+    if(song.verses[vi] && song.verses[vi].lines[li]){
+      song.verses[vi].lines[li].english = inp.value.trim();
+    }
+  });
+  await saveSong();
+  toast('Translations saved!');
+  startGame();
+}
+
 async function saveSong(){
   if(!song.id) song.id = uid();
   await store.set('song:'+song.id, song);
@@ -1715,7 +1775,7 @@ async function importCommunitySong(entry){
   };
   song = normalizeSongTexts(localSong);
   await saveSong();
-  toast('Imported — add your own translation anytime via ✎ Edit text');
+  toast('Imported — tap 🌐 Add translation to add your own');
   startGame();
 }
 
@@ -3568,6 +3628,9 @@ $('edit-tags-btn').addEventListener('click', ()=>{
   if(!song.videoId){ toast('No video attached — use ✎ Edit text to add a YouTube link first'); return }
   stopAudio(); startTagger();
 });
+$('edit-trans-btn').addEventListener('click', openTransEditor);
+$('trans-edit-cancel-btn').addEventListener('click', ()=>startGame());
+$('trans-edit-save-btn').addEventListener('click', saveTranslations);
 $('edit-text-btn').addEventListener('click', ()=>{
   stopAudio();
   editingSongId = song.id || null;
