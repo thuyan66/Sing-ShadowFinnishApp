@@ -1026,5 +1026,246 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Lennä lennä leppäkerttu",
+    "videoId": "WHHE4Dzl2a4",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-08T22:51:55.869Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "lennä lennä leppäkerttu",
+            "start": 7.397478110626221,
+            "end": 11.821849135421752,
+            "verbs": [
+              {
+                "surface": "lennä",
+                "infinitive": "lentää",
+                "options": [
+                  {
+                    "form": "lennä"
+                  },
+                  {
+                    "form": "lennän"
+                  },
+                  {
+                    "form": "lentää"
+                  },
+                  {
+                    "form": "lennämme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ison kiven juureen",
+            "start": 11.821849135421752,
+            "end": 15.796406040054322,
+            "verbs": []
+          },
+          {
+            "text": "lennä leikkikedon kautta",
+            "start": 15.796406040054322,
+            "end": 19.803915866485596,
+            "verbs": [
+              {
+                "surface": "lennä",
+                "infinitive": "lentää",
+                "options": [
+                  {
+                    "form": "lennä"
+                  },
+                  {
+                    "form": "lennät"
+                  },
+                  {
+                    "form": "lentää"
+                  },
+                  {
+                    "form": "lentävät"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "unipuuhuun suureen",
+            "start": 19.803915866485596,
+            "end": 23.625735893188477,
+            "verbs": []
+          },
+          {
+            "text": "kulta kultalehden alla",
+            "start": 23.625735893188477,
+            "end": 27.66869197138977,
+            "verbs": []
+          },
+          {
+            "text": "äiti puuron keittää",
+            "start": 27.66869197138977,
+            "end": 31.639204938964845,
+            "verbs": [
+              {
+                "surface": "keittää",
+                "infinitive": "keittää",
+                "options": [
+                  {
+                    "form": "keittää"
+                  },
+                  {
+                    "form": "keitän"
+                  },
+                  {
+                    "form": "keität"
+                  },
+                  {
+                    "form": "keittävät"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "unituutu leppäkertun",
+            "start": 31.639204938964845,
+            "end": 35.72123095613098,
+            "verbs": []
+          },
+          {
+            "text": "lämpimästi peittää",
+            "start": 35.72123095613098,
+            "end": 39.74415904196167,
+            "verbs": [
+              {
+                "surface": "peittää",
+                "infinitive": "peittää",
+                "options": [
+                  {
+                    "form": "peittää"
+                  },
+                  {
+                    "form": "peitän"
+                  },
+                  {
+                    "form": "peität"
+                  },
+                  {
+                    "form": "peittävät"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "laula laula unilintu",
+            "start": 39.74415904196167,
+            "end": 43.65352305722046,
+            "verbs": [
+              {
+                "surface": "laula",
+                "infinitive": "laulaa",
+                "options": [
+                  {
+                    "form": "laulaa"
+                  },
+                  {
+                    "form": "laulan"
+                  },
+                  {
+                    "form": "laulat"
+                  },
+                  {
+                    "form": "laula"
+                  }
+                ]
+              },
+              {
+                "surface": "laula",
+                "infinitive": "laulaa",
+                "options": [
+                  {
+                    "form": "laulaa"
+                  },
+                  {
+                    "form": "laulan"
+                  },
+                  {
+                    "form": "laulat"
+                  },
+                  {
+                    "form": "laula"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tuoksu tuomenterttu",
+            "start": 43.65352305722046,
+            "end": 47.56249988365173,
+            "verbs": [
+              {
+                "surface": "tuoksu",
+                "infinitive": "tuoksua",
+                "options": [
+                  {
+                    "form": "tuoksua"
+                  },
+                  {
+                    "form": "tuoksun"
+                  },
+                  {
+                    "form": "tuoksut"
+                  },
+                  {
+                    "form": "tuoksu"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "nuku punapaitulainen",
+            "start": 47.56249988365173,
+            "end": 51.91693601716614,
+            "verbs": [
+              {
+                "surface": "nuku",
+                "infinitive": "nukkua",
+                "options": [
+                  {
+                    "form": "nukkua"
+                  },
+                  {
+                    "form": "nukun"
+                  },
+                  {
+                    "form": "nukut"
+                  },
+                  {
+                    "form": "nuku"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "pikku leppäkerttu",
+            "start": 51.91693601716614,
+            "end": 56.28983492370605,
+            "verbs": []
+          }
+        ]
+      }
+    ]
   }
 ]
