@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Sing &amp; Shadow Finnish App</title>
+<title>Laulupaja — Song Workshop</title>
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+KR:wght@400;500&family=Noto+Sans+HK:wght@400;500&family=Noto+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -146,6 +146,12 @@ p.sheet-sub{font-size:.95rem;font-style:italic;color:var(--ink2);margin-bottom:1
 .verb-card .vc-forms span{display:inline-block;background:var(--paper2);border-radius:3px;
   padding:1px 7px;margin:2px 3px;font-size:.75rem}
 .verb-card .vc-songs{font-size:.68rem;color:var(--ink3);margin-top:4px;font-style:italic}
+.verb-card .vc-sents{margin-top:6px;display:flex;flex-direction:column;gap:4px}
+.verb-card .vc-sent{font-size:.82rem;color:var(--ink2);line-height:1.5;padding-left:8px;
+  border-left:2px solid var(--paper-line)}
+.verb-card .vc-sent .vc-sent-song{font-size:.66rem;color:var(--ink3);font-style:italic}
+.verb-card .vc-hl{background:var(--brass2);color:var(--ink);border-radius:3px;
+  padding:0 3px;font-weight:600}
 #lib-quiz{display:flex;flex-direction:column;gap:14px;align-items:center;padding:8px 0}
 #lib-quiz .lq-prompt{text-align:center;font-size:1rem;min-height:50px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
@@ -547,8 +553,8 @@ textarea{min-height:130px;line-height:1.7}
 <body>
 
 <div id="topbar">
-  <h1 id="brand">Sing &amp; Shadow Finnish</h1>
-  <div class="sub">Play &amp; Learn Finnish via your favorite songs and videos from Youtube</div>
+  <h1 id="brand">Laulupaja</h1>
+  <div class="sub">· Song Workshop · Listen · Arrange · Inflect ·</div>
   <div id="song-title-lbl"></div>
 </div>
 
@@ -745,7 +751,7 @@ textarea{min-height:130px;line-height:1.7}
 <script>
 'use strict';
 /* ═══════════════════════════════════════════════════════════════
-   SING & SHADOW FINNISH 2.0 — player-importable song engine
+   LAULUPAJA 2.0 — player-importable song engine
    Pipeline: Import → AI analysis (Gemini Flash) → Review → Tap-along
    video tagging → 5-level game (arrange / verbs / inflection / match / type).
    Uses Google Gemini Flash API (free tier) for morphological analysis.
@@ -1232,11 +1238,17 @@ async function aggregateVerbs(){
       (line.verbs||[]).forEach(vb=>{
         const key = vb.infinitive;
         if(!key) return;
-        if(!verbs[key]) verbs[key] = { infinitive:key, forms:new Set(), songs:new Map() };
+        if(!verbs[key]) verbs[key] = { infinitive:key, forms:new Set(), songs:new Map(), sentences:[], seen:new Set() };
         // Only the form actually sung/used in this line — never the invented
         // quiz-distractor options (those aren't real content the player encountered).
         verbs[key].forms.add(vb.surface);
         verbs[key].songs.set(meta.id, meta.title);
+        // capture the sentence (line) this word appears in, deduped
+        const dedupeKey = meta.id+'|'+line.text;
+        if(line.text && !verbs[key].seen.has(dedupeKey)){
+          verbs[key].seen.add(dedupeKey);
+          verbs[key].sentences.push({ text:line.text, surface:vb.surface, song:meta.title });
+        }
       });
     }));
   }
@@ -1245,8 +1257,27 @@ async function aggregateVerbs(){
     infinitive: v.infinitive,
     forms: [...v.forms].filter(f=>f!==v.infinitive),
     songs: [...v.songs.values()],
-    allForms: [...v.forms]
+    allForms: [...v.forms],
+    sentences: v.sentences
   })).sort((a,b)=>a.infinitive.localeCompare(b.infinitive,'fi'));
+}
+
+// wrap the matching surface word inside a sentence with a highlight <mark>
+function highlightWord(sentence, surface){
+  const words = sentence.split(/(\s+)/); // keep whitespace tokens
+  const nTarget = normalizeText(surface);
+  let done=false;
+  return words.map(tok=>{
+    if(done || /^\s+$/.test(tok) || !tok) return esc(tok);
+    // strip surrounding punctuation for the comparison, keep it in output
+    const m = tok.match(/^(\p{P}*)(.*?)(\p{P}*)$/u);
+    const core = m ? m[2] : tok;
+    if(core && normalizeText(core)===nTarget){
+      done=true;
+      return esc(m[1]) + `<mark class="vc-hl">${esc(core)}</mark>` + esc(m[3]);
+    }
+    return esc(tok);
+  }).join('');
 }
 
 async function renderLibrary(){
@@ -1264,12 +1295,15 @@ async function renderLibrary(){
   verbs.forEach(vb=>{
     const card = document.createElement('div'); card.className='verb-card';
     let formsHtml = vb.forms.map(f=>`<span>${esc(f)}</span>`).join('');
+    const sentHtml = vb.sentences.length
+      ? vb.sentences.map(s=>`<div class="vc-sent">${highlightWord(s.text, s.surface)} <span class="vc-sent-song">— ${esc(s.song)}</span></div>`).join('')
+      : `<div class="vc-sent"><em>No example sentence yet</em></div>`;
     card.innerHTML = `<div class="vc-head">
       <button class="vc-play" title="Listen">🔊</button>
       <div class="vc-dict">${esc(vb.infinitive)}</div>
     </div>
     <div class="vc-forms">Forms: ${formsHtml || '<em>only dictionary form</em>'}</div>
-    <div class="vc-songs">From: ${vb.songs.map(s=>esc(s)).join(', ')}</div>`;
+    <div class="vc-sents">${sentHtml}</div>`;
     card.querySelector('.vc-play').addEventListener('click', e=>{
       e.stopPropagation(); speakFi(vb.infinitive);
     });
@@ -1909,9 +1943,11 @@ let voices=[], curPlayBtn=null;
 function loadVoices(){ voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : []; }
 if(window.speechSynthesis){ window.speechSynthesis.onvoiceschanged = loadVoices; loadVoices(); }
 function stopTTS(){ if(window.speechSynthesis) window.speechSynthesis.cancel(); }
+let suppressVerseReset=false;
 function stopAudio(){
   stopSegment(); stopTTS();
   if(curPlayBtn){ curPlayBtn.classList.remove('playing'); curPlayBtn=null; }
+  if(!suppressVerseReset && typeof versePlaying!=='undefined' && versePlaying) setVerseBtn(false);
 }
 function hasVideoFor(line){ return ytState==='ready' && line.start!=null && line.end!=null; }
 function playLine(line, btn, onend){
@@ -1928,14 +1964,28 @@ function playLine(line, btn, onend){
     window.speechSynthesis.speak(u);
   } else done();
 }
+let versePlaying=false;
+function setVerseBtn(playing){
+  versePlaying = playing;
+  const b=$('play-verse-btn');
+  if(b){ b.textContent = playing ? '⏹ Stop' : '▶ Verse'; b.classList.toggle('playing', playing); }
+}
 function playVerseSeq(){
+  // toggle: if already playing, stop
+  if(versePlaying){ stopAudio(); return; }
   stopAudio();
   const lines = verse().lines;
+  setVerseBtn(true);
+  const finish = ()=> setVerseBtn(false);
   // contiguous video segments play as one span; else line-by-line
   if(lines.every(hasVideoFor)){
-    playSegment(lines[0].start, lines[lines.length-1].end); return;
+    playSegment(lines[0].start, lines[lines.length-1].end, finish); return;
   }
-  let i=0; const step=()=>{ if(i>=lines.length) return; playLine(lines[i++], null, step); };
+  let i=0; const step=()=>{
+    if(i>=lines.length){ finish(); return; }
+    suppressVerseReset=true; playLine(lines[i++], null, ()=>{ suppressVerseReset=false; step(); });
+    suppressVerseReset=false;
+  };
   step();
 }
 
@@ -2423,8 +2473,11 @@ function confirmL4(){
 
 // ── Level 5: type verb forms (dictionary clue, hidden translation hint) ──
 let l5Typed = [];
+let l5VerseFails=0;
 function startL5Verse(){
-  locked=false; 
+  locked=false;
+  l5VerseFails=0;                       // reset fail count per verse (part)
+  $('reveal-btn').classList.add('hidden'); // clear Reveal each new part
   buildSlotMeta();
   l5Typed = slotMeta.map(()=>'');
   renderL5(); renderHud(); setControls();
@@ -2495,7 +2548,8 @@ function confirmL5(){
     });
     $('status-note').textContent='Not all forms are correct yet — check your spelling.';
     $('status-note').classList.remove('hidden');
-    if(attempts[5]>=5) $('reveal-btn').classList.remove('hidden');
+    l5VerseFails++;
+    if(l5VerseFails>=3) $('reveal-btn').classList.remove('hidden');
   }
   renderHud();
 }
@@ -2800,12 +2854,19 @@ function startGapRecord(gap){
     }
 
     // tap again to stop
+    let autoTimer=null;
     const stopHandler = ()=>{
+      if(autoTimer){ clearTimeout(autoTimer); autoTimer=null; }
       btn.removeEventListener('click', stopHandler);
       if(rec.state!=='inactive') rec.stop();
       if(activeSTT){ try{activeSTT.stop()}catch(e){} }
     };
     btn.addEventListener('click', stopHandler, {once:true});
+
+    // auto-stop after a fixed window to prevent excessive clicking
+    if(gap.maxMs){
+      autoTimer = setTimeout(()=>{ if(btn.classList.contains('recording')) stopHandler(); }, gap.maxMs);
+    }
   });
 }
 
@@ -2900,7 +2961,7 @@ function renderL8(){
           const mic = document.createElement('button'); mic.className='mic-btn'; mic.textContent='🎤';
           const res = document.createElement('span'); res.className='spk-result';
           span.appendChild(mic); span.appendChild(res);
-          const gapObj = {target:verb.surface, el:span, micBtn:mic, resultEl:res, done:false,
+          const gapObj = {target:verb.surface, el:span, micBtn:mic, resultEl:res, done:false, maxMs:3000,
             onMatch:()=>{ gapObj.done=true; checkSpkComplete(); }};
           spkGaps.push(gapObj);
           mic.addEventListener('click', e=>{e.stopPropagation(); if(!mic.classList.contains('recording')&&!mic.classList.contains('ok')) startGapRecord(gapObj);});
@@ -2945,7 +3006,7 @@ function renderL9(){
         const mic = document.createElement('button'); mic.className='mic-btn'; mic.textContent='🎤';
         const res = document.createElement('span'); res.className='spk-result';
         span.appendChild(mic); span.appendChild(res);
-        const gapObj = {target:w, el:span, micBtn:mic, resultEl:res, done:false,
+        const gapObj = {target:w, el:span, micBtn:mic, resultEl:res, done:false, maxMs:3000,
           onMatch:()=>{ gapObj.done=true; checkSpkComplete(); }};
         spkGaps.push(gapObj);
         mic.addEventListener('click', e=>{e.stopPropagation(); if(!mic.classList.contains('recording')&&!mic.classList.contains('ok')) startGapRecord(gapObj);});
@@ -2990,7 +3051,7 @@ function renderL10(){
       const mic = document.createElement('button'); mic.className='mic-btn'; mic.textContent='🎤';
       const res = document.createElement('span'); res.className='spk-result';
       gapDiv.appendChild(mic); gapDiv.appendChild(res);
-      const gapObj = {target:line.text, el:gapDiv, micBtn:mic, resultEl:res, done:false,
+      const gapObj = {target:line.text, el:gapDiv, micBtn:mic, resultEl:res, done:false, maxMs:8000,
         onMatch:()=>{ gapObj.done=true; gapDiv.classList.add('gap-ok'); checkSpkComplete(); }};
       spkGaps.push(gapObj);
       mic.addEventListener('click', e=>{e.stopPropagation(); if(!mic.classList.contains('recording')&&!mic.classList.contains('ok')) startGapRecord(gapObj);});
