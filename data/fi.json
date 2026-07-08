@@ -1,1 +1,273 @@
-[]
+[
+  {
+    "title": "Ihme ja kumma",
+    "videoId": "2bdoRXmc1ZU",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-08T20:09:42.002Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "auringossa aina varjo seuraa kulkijaa",
+            "start": 15.036632093460083,
+            "end": 21.25,
+            "verbs": [
+              {
+                "surface": "seuraa",
+                "infinitive": "seurata",
+                "options": [
+                  {
+                    "form": "seuraa"
+                  },
+                  {
+                    "form": "seuraan"
+                  },
+                  {
+                    "form": "seuraavat"
+                  },
+                  {
+                    "form": "seurasi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kun päivä painuu pilveen niin varjo katoaa",
+            "start": 21.25,
+            "end": 27.26568501716614,
+            "verbs": [
+              {
+                "surface": "painuu",
+                "infinitive": "painua",
+                "options": [
+                  {
+                    "form": "painuu"
+                  },
+                  {
+                    "form": "painun"
+                  },
+                  {
+                    "form": "painuivat"
+                  },
+                  {
+                    "form": "painuisin"
+                  }
+                ]
+              },
+              {
+                "surface": "katoaa",
+                "infinitive": "kadota",
+                "options": [
+                  {
+                    "form": "katoaa"
+                  },
+                  {
+                    "form": "katoan"
+                  },
+                  {
+                    "form": "katoavat"
+                  },
+                  {
+                    "form": "katosi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "maailmassa monta on ihmeellistä asiaa",
+            "start": 27.26568501716614,
+            "end": 32.73081995613098,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "se hämmästyttää kummastuttaa pientä kulkijaa",
+            "start": 32.73081995613098,
+            "end": 40.125643950408936,
+            "verbs": [
+              {
+                "surface": "hämmästyttää",
+                "infinitive": "hämmästyttää",
+                "options": [
+                  {
+                    "form": "hämmästyttää"
+                  },
+                  {
+                    "form": "hämmästytän"
+                  },
+                  {
+                    "form": "hämmästyttävät"
+                  },
+                  {
+                    "form": "hämmästytti"
+                  }
+                ]
+              },
+              {
+                "surface": "kummastuttaa",
+                "infinitive": "kummastuttaa",
+                "options": [
+                  {
+                    "form": "kummastuttaa"
+                  },
+                  {
+                    "form": "kummastutan"
+                  },
+                  {
+                    "form": "kummastuttavat"
+                  },
+                  {
+                    "form": "kummastutti"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "siilillä on piikit linnulla on höyhenet",
+            "start": 40.125643950408936,
+            "end": 46.04932300953674,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olen"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olen"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "pupulla ja oravalla turkit pehmoiset",
+            "start": 46.04932300953674,
+            "end": 51.90587397901916,
+            "verbs": []
+          },
+          {
+            "text": "maailmassa monta on ihmeellistä asiaa",
+            "start": 51.90587397901916,
+            "end": 57.52733096948242,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olen"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "se hämmästyttää kummastuttaa pientä kulkijaa",
+            "start": 57.52733096948242,
+            "end": 64.18019099237061,
+            "verbs": [
+              {
+                "surface": "hämmästyttää",
+                "infinitive": "hämmästyttää",
+                "options": [
+                  {
+                    "form": "hämmästyttää"
+                  },
+                  {
+                    "form": "hämmästyttävät"
+                  },
+                  {
+                    "form": "hämmästytti"
+                  },
+                  {
+                    "form": "hämmästytän"
+                  }
+                ]
+              },
+              {
+                "surface": "kummastuttaa",
+                "infinitive": "kummastuttaa",
+                "options": [
+                  {
+                    "form": "kummastuttaa"
+                  },
+                  {
+                    "form": "kummastuttavat"
+                  },
+                  {
+                    "form": "kummastutti"
+                  },
+                  {
+                    "form": "kummastutan"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
