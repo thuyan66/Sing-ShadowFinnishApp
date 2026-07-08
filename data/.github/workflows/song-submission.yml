@@ -1,0 +1,23 @@
+name: Song Submission
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  process-submission:
+    if: startsWith(github.event.issue.title, '[Song Submission]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate, dedupe, and merge submission
+        uses: actions/github-script@v7
+        with:
+          script-path: .github/scripts/process-submission.js
