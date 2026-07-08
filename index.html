@@ -941,9 +941,9 @@ async function saveIndex(){ await store.set('songs-index', songsIndex); }
 const PETALS_PER_FLOWER = 30;
 const WILT_DAYS = 7;
 const RINGS = [
-  { count:8,  start:14, len:30, w:13, offset:0 },
-  { count:10, start:14, len:46, w:11, offset:18 },
-  { count:12, start:14, len:62, w:10, offset:15 },
+  { count:8,  base:18, len:34, w:13, offset:0  },
+  { count:10, base:44, len:40, w:14, offset:18 },
+  { count:12, base:74, len:46, w:13, offset:15 },
 ];
 // Precompute petal layout: ring/index → global petal index (0-29)
 const PETAL_LAYOUT = [];
@@ -991,11 +991,13 @@ async function gardenMarkLevel(songId, lvl){
   }
 }
 
-// ── SVG petal path ──
+// ── SVG petal path — rounded leaf, base at ring.base, tip at base+len ──
 function petalPath(ring){
-  const s = ring.start, l = ring.len, w = ring.w;
-  const tip = s+l;
-  return `M 0 ${-s} C ${-w} ${-(s+l*.3)} ${-w} ${-(s+l*.7)} 0 ${-tip} C ${w} ${-(s+l*.7)} ${w} ${-(s+l*.3)} 0 ${-s} Z`;
+  const s = ring.base, l = ring.len, w = ring.w;
+  const tip = s + l;
+  return `M 0 ${-s}
+    C ${-w} ${-(s+l*0.22)} ${-w} ${-(s+l*0.72)} 0 ${-tip}
+    C ${w} ${-(s+l*0.72)} ${w} ${-(s+l*0.22)} 0 ${-s} Z`;
 }
 function petalHue(globalIdx){ return (globalIdx/PETALS_PER_FLOWER)*360; }
 function petalFill(hue, tier, wilted){
@@ -1013,8 +1015,8 @@ function petalOpacity(tier, wilted){
 // ── SVG flower generator ──
 function buildFlowerSVG(songSlots, streakActive, streakCount, flowerLabel){
   // songSlots: array of 30 {meta,tier,wilted} or null
-  const cx=150, cy=150;
-  let svg = `<svg class="flower-svg" viewBox="0 0 300 300" width="260" height="260" xmlns="http://www.w3.org/2000/svg">`;
+  const cx=130, cy=130;
+  let svg = `<svg class="flower-svg" viewBox="0 0 260 260" width="300" height="300" xmlns="http://www.w3.org/2000/svg">`;
   // watercolor filter
   svg += `<defs><filter id="wc" x="-10%" y="-10%" width="120%" height="120%">
     <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="t"/>
@@ -1036,7 +1038,7 @@ function buildFlowerSVG(songSlots, streakActive, streakCount, flowerLabel){
       transform="translate(${cx},${cy}) rotate(${pl.angle})"/>`;
     // "+" for empty petals
     if(!slot || !slot.meta){
-      const midR = pl.ring.start + pl.ring.len*0.5;
+      const midR = pl.ring.base + pl.ring.len*0.5;
       const rad = pl.angle * Math.PI/180;
       const tx = cx + Math.sin(rad)*midR, ty = cy - Math.cos(rad)*midR;
       svg += `<text class="petal-plus" x="${tx.toFixed(1)}" y="${ty.toFixed(1)}" text-anchor="middle" dominant-baseline="central">+</text>`;
