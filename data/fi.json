@@ -269,5 +269,325 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Pieni Nokipoika",
+    "videoId": "v5ByPjx12Ng",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-08T21:38:36.708Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "pieni nokipoika vaan",
+            "start": 7.801343910354614,
+            "end": 12.419826053405762,
+            "verbs": []
+          },
+          {
+            "text": "uunin piippuun katoaa",
+            "start": 12.419826053405762,
+            "end": 16.482363904632567,
+            "verbs": [
+              {
+                "surface": "katoaa",
+                "infinitive": "kadota",
+                "options": [
+                  {
+                    "form": "katoaa"
+                  },
+                  {
+                    "form": "katosin"
+                  },
+                  {
+                    "form": "katoavat"
+                  },
+                  {
+                    "form": "kadonnut"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "yhä ylös yrittää",
+            "start": 16.482363904632567,
+            "end": 20.54897587792969,
+            "verbs": [
+              {
+                "surface": "yrittää",
+                "infinitive": "yrittää",
+                "options": [
+                  {
+                    "form": "yrittää"
+                  },
+                  {
+                    "form": "yritti"
+                  },
+                  {
+                    "form": "yrittävät"
+                  },
+                  {
+                    "form": "yrittänyt"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "katolle hän kiipeää",
+            "start": 20.54897587792969,
+            "end": 32.94409380735779,
+            "verbs": [
+              {
+                "surface": "kiipeää",
+                "infinitive": "kiivetä",
+                "options": [
+                  {
+                    "form": "kiipeää"
+                  },
+                  {
+                    "form": "kiipesi"
+                  },
+                  {
+                    "form": "kiipeävät"
+                  },
+                  {
+                    "form": "kiivennyt"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "ympärilleen katselee",
+            "start": 32.94409380735779,
+            "end": 37.37647504768372,
+            "verbs": [
+              {
+                "surface": "katselee",
+                "infinitive": "katsella",
+                "options": [
+                  {
+                    "form": "katselee"
+                  },
+                  {
+                    "form": "katselen"
+                  },
+                  {
+                    "form": "katselivat"
+                  },
+                  {
+                    "form": "katsellaan"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "auringonkin arvelee",
+            "start": 37.37647504768372,
+            "end": 41.36688800762939,
+            "verbs": [
+              {
+                "surface": "arvelee",
+                "infinitive": "arvella",
+                "options": [
+                  {
+                    "form": "arvelee"
+                  },
+                  {
+                    "form": "arvelen"
+                  },
+                  {
+                    "form": "arvelivat"
+                  },
+                  {
+                    "form": "arvellaan"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "voivan sieltä saavuttaa",
+            "start": 41.36688800762939,
+            "end": 45.79745796185303,
+            "verbs": [
+              {
+                "surface": "voivan",
+                "infinitive": "voida",
+                "options": [
+                  {
+                    "form": "voivan"
+                  },
+                  {
+                    "form": "voin"
+                  },
+                  {
+                    "form": "voivat"
+                  },
+                  {
+                    "form": "voidaan"
+                  }
+                ]
+              },
+              {
+                "surface": "saavuttaa",
+                "infinitive": "saavuttaa",
+                "options": [
+                  {
+                    "form": "saavuttaa"
+                  },
+                  {
+                    "form": "saavutan"
+                  },
+                  {
+                    "form": "saavuttavat"
+                  },
+                  {
+                    "form": "saavutetaan"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "siksi huutaa hei hurraa",
+            "start": 45.79745796185303,
+            "end": 57.5,
+            "verbs": [
+              {
+                "surface": "huutaa",
+                "infinitive": "huutaa",
+                "options": [
+                  {
+                    "form": "huutaa"
+                  },
+                  {
+                    "form": "huudan"
+                  },
+                  {
+                    "form": "huutavat"
+                  },
+                  {
+                    "form": "huudetaan"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "pikku nokipoika vaan",
+            "start": 57.5,
+            "end": 62.2,
+            "verbs": []
+          },
+          {
+            "text": "puhdas ompi muodoltaan",
+            "start": 62.2,
+            "end": 66.1,
+            "verbs": [
+              {
+                "surface": "ompi",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ompi"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kun hän pyhän tultua",
+            "start": 66.1,
+            "end": 70.2,
+            "verbs": [
+              {
+                "surface": "tultua",
+                "infinitive": "tulla",
+                "options": [
+                  {
+                    "form": "tulee"
+                  },
+                  {
+                    "form": "tuli"
+                  },
+                  {
+                    "form": "tultua"
+                  },
+                  {
+                    "form": "tullut"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "pois saa olla piipusta",
+            "start": 70.2,
+            "end": 74.68633301335144,
+            "verbs": [
+              {
+                "surface": "saa",
+                "infinitive": "saada",
+                "options": [
+                  {
+                    "form": "saa"
+                  },
+                  {
+                    "form": "sain"
+                  },
+                  {
+                    "form": "saavat"
+                  },
+                  {
+                    "form": "saanut"
+                  }
+                ]
+              },
+              {
+                "surface": "olla",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olla"
+                  },
+                  {
+                    "form": "olisi"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
