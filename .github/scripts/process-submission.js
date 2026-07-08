@@ -165,45 +165,60 @@ module.exports = async ({ github, context, core }) => {
 
     checkDuplicate(song, allLineTexts, existing);
 
-    const clean = buildCleanEntry(song);
-    existing.push(clean);
-    const newContent = Buffer.from(JSON.stringify(existing, null, 2) + '\n', 'utf8').toString('base64');
-
-    const branch = `song-submission-${issue.number}`;
-    const mainRef = await github.rest.git.getRef({ owner, repo, ref: `heads/${BASE_BRANCH}` });
-    await github.rest.git.createRef({ owner, repo, ref: `refs/heads/${branch}`, sha: mainRef.data.object.sha });
-    await github.rest.repos.createOrUpdateFileContents({
-      owner, repo, path: DATA_PATH,
-      message: `Add song: ${clean.title} (#${issue.number})`,
-      content: newContent, sha, branch
-    });
-
-    const pr = await github.rest.pulls.create({
-      owner, repo,
-      title: `Add song: ${clean.title}`,
-      head: branch, base: BASE_BRANCH,
-      body: `Auto-submitted via #${issue.number}. Passed validation: word count, structure, profanity filter, duplicate check.`
-    });
-
-    let merged = false;
+    // Everything past this point is infrastructure (git/PR plumbing), not the
+    // submitter's fault — failures there should NOT read as "rejected".
+    let clean;
     try {
-      await github.rest.pulls.merge({ owner, repo, pull_number: pr.data.number, merge_method: 'squash' });
-      merged = true;
-    } catch (e) {
-      // branch protection or other block — leave PR open for manual merge
-      merged = false;
-    }
+      clean = buildCleanEntry(song);
+      existing.push(clean);
+      const newContent = Buffer.from(JSON.stringify(existing, null, 2) + '\n', 'utf8').toString('base64');
 
-    await github.rest.issues.createComment({
-      owner, repo, issue_number: issue.number,
-      body: merged
-        ? `✅ Added to the community library! ${pr.data.html_url}`
-        : `✅ Validation passed. Could not auto-merge (branch protection?) — please merge manually: ${pr.data.html_url}`
-    });
-    await github.rest.issues.update({
-      owner, repo, issue_number: issue.number,
-      state: 'closed', labels: ['song-submission', 'approved']
-    });
+      // Unique per run — a retry (e.g. issue reopened) can never collide with a leftover branch
+      const branch = `song-submission-${issue.number}-${Date.now()}`;
+      const mainRef = await github.rest.git.getRef({ owner, repo, ref: `heads/${BASE_BRANCH}` });
+      await github.rest.git.createRef({ owner, repo, ref: `refs/heads/${branch}`, sha: mainRef.data.object.sha });
+      await github.rest.repos.createOrUpdateFileContents({
+        owner, repo, path: DATA_PATH,
+        message: `Add song: ${clean.title} (#${issue.number})`,
+        content: newContent, sha, branch
+      });
+
+      const pr = await github.rest.pulls.create({
+        owner, repo,
+        title: `Add song: ${clean.title}`,
+        head: branch, base: BASE_BRANCH,
+        body: `Auto-submitted via #${issue.number}. Passed validation: word count, structure, profanity filter, duplicate check.`
+      });
+
+      let merged = false;
+      try {
+        await github.rest.pulls.merge({ owner, repo, pull_number: pr.data.number, merge_method: 'squash' });
+        merged = true;
+        // tidy up: remove the work branch after a successful merge
+        try { await github.rest.git.deleteRef({ owner, repo, ref: `heads/${branch}` }); } catch (e) {}
+      } catch (e) {
+        // branch protection or other block — leave PR open for manual merge
+        merged = false;
+      }
+
+      await github.rest.issues.createComment({
+        owner, repo, issue_number: issue.number,
+        body: merged
+          ? `✅ Added to the community library! ${pr.data.html_url}`
+          : `✅ Validation passed. Could not auto-merge (branch protection?) — please merge manually: ${pr.data.html_url}`
+      });
+      await github.rest.issues.update({
+        owner, repo, issue_number: issue.number,
+        state: 'closed', labels: ['song-submission', 'approved']
+      });
+    } catch (infraErr) {
+      // Validation passed but git/PR plumbing failed — keep the issue OPEN so a
+      // close+reopen retries it, and make clear the song itself was fine.
+      await github.rest.issues.createComment({
+        owner, repo, issue_number: issue.number,
+        body: `⚠️ Your song passed validation, but something went wrong on our side while saving it (${infraErr.message}). Close and reopen this issue to retry.`
+      });
+    }
   } catch (err) {
     await reject(err.message || String(err));
   }
