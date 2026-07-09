@@ -627,8 +627,8 @@ textarea{min-height:130px;line-height:1.7}
 <button id="home-fab" title="Back to main page" aria-label="Home">🏠</button>
 
 <div id="topbar">
-  <h1 id="brand">Laulupaja</h1>
-  <div class="sub">· Song Workshop · Listen · Arrange · Inflect ·</div>
+  <h1 id="brand">Sing & Shadow Finnish</h1>
+  <div class="sub">· Listen · Play · Shadow · Acquire ·</div>
   <div id="song-title-lbl"></div>
   <div id="share-pill" class="hidden">🌱 Share this song</div>
 </div>
@@ -652,7 +652,7 @@ textarea{min-height:130px;line-height:1.7}
   <!-- ══ HOME ══ -->
   <div class="screen active" id="home-screen">
     <h2 class="sheet-title">Your Songs</h2>
-    <p class="sheet-sub">Import any song in any language — the workshop turns it into a game.</p>
+    <p class="sheet-sub">Import music video from YouTube — the workshop turns it into a game.</p>
     <div id="garden-view"></div>
     <div id="petal-popup" class="hidden">
       <div id="pp-title"></div>
@@ -726,7 +726,7 @@ textarea{min-height:130px;line-height:1.7}
   <!-- ══ IMPORT ══ -->
   <div class="screen" id="import-screen">
     <h2 class="sheet-title">Import a Song</h2>
-    <p class="sheet-sub">Paste lyrics you have the right to use. The AI detects the language, the verbs, and their forms — you review everything before playing.</p>
+    <p class="sheet-sub">Paste lyrics and YouTube link. The AI will do the rest — you review everything before playing.</p>
 
     <div class="f-label">Song title</div>
     <input type="text" id="in-title" placeholder="Title">
@@ -1261,19 +1261,13 @@ function renderChQuestion(){
     // show ear icon + play button, no text
     const cue = document.createElement('div'); cue.className='ch-audio-cue'; cue.textContent='🔊';
     cue.title='Tap to listen';
-    cue.addEventListener('click', ()=>{
-      cue.classList.add('playing');
-      speakFi(q.line.text, ()=>cue.classList.remove('playing'));
-    });
+    const playCh = ()=>{ cue.classList.add('playing'); playChLineAudio(q.line, q._item&&q._item.songObj, ()=>cue.classList.remove('playing')); };
+    cue.addEventListener('click', playCh);
     prompt.appendChild(cue);
     const hint = document.createElement('div'); hint.style.cssText='font-size:.72rem;color:var(--ink3)';
     hint.textContent='Listen and pick the song';
     prompt.appendChild(hint);
-    // auto-play
-    setTimeout(()=>{
-      cue.classList.add('playing');
-      speakFi(q.line.text, ()=>cue.classList.remove('playing'));
-    }, 400);
+    setTimeout(playCh, 400);
   } else if(q.type==='text'){
     // show lyric text
     const txt = document.createElement('div'); txt.className='ch-line'; txt.textContent=q.line.text;
@@ -1290,7 +1284,7 @@ function renderChQuestion(){
     cue.style.fontSize='1.4rem';
     cue.addEventListener('click', ()=>{
       cue.classList.add('playing');
-      speakFi(q.line.text, ()=>cue.classList.remove('playing'));
+      playChLineAudio(q.line, q._item&&q._item.songObj, ()=>cue.classList.remove('playing'));
     });
     prompt.appendChild(cue);
   } else if(isProduction){
@@ -1315,13 +1309,13 @@ function renderChProduction(q, prompt, optsArea){
 
   if(q.type==='ch_audio_echo'){
     const cue=document.createElement('button'); cue.className='ch-audio-cue'; cue.textContent='🔊';
-    cue.addEventListener('click', ()=>speakFi(line.text));
+    cue.addEventListener('click', ()=>playChLineAudio(line, item.songObj));
     prompt.appendChild(cue);
     const instr=document.createElement('div'); instr.style.cssText='font-size:.75rem;color:var(--ink3)';
     instr.textContent='Repeat what you hear';
     prompt.appendChild(instr);
-    setTimeout(()=>speakFi(line.text), 400);
-    renderChSpeakGap(optsArea, line.text, q, {longForm:true, maxMs:8000});
+    setTimeout(()=>playChLineAudio(line, item.songObj), 400);
+    renderChSpeakGap(optsArea, line.text, q, {longForm:true, maxMs:8000, audioLine:line, audioSong:item.songObj});
 
   } else if(q.type==='ch_translation_speak'){
     const trans=document.createElement('div'); trans.style.cssText='font-size:1rem;color:var(--ink);font-style:italic';
@@ -1338,11 +1332,11 @@ function renderChProduction(q, prompt, optsArea){
       else hintDiv.classList.add('hidden');
     });
     prompt.appendChild(hintBtn); prompt.appendChild(hintDiv);
-    renderChSpeakGap(optsArea, line.text, q, {longForm:true, maxMs:8000});
+    renderChSpeakGap(optsArea, line.text, q, {longForm:true, maxMs:8000, audioLine:line, audioSong:item.songObj});
 
   } else if(q.type==='ch_chain_recall'){
     const cue=document.createElement('button'); cue.className='ch-audio-cue'; cue.textContent='🔊';
-    cue.addEventListener('click', ()=>speakFi(line.text));
+    cue.addEventListener('click', ()=>playChLineAudio(line, item.songObj));
     prompt.appendChild(cue);
     const lineDiv=document.createElement('div'); lineDiv.style.cssText='font-size:1rem;color:var(--ink);margin-top:4px';
     lineDiv.textContent=line.text;
@@ -1350,13 +1344,13 @@ function renderChProduction(q, prompt, optsArea){
     const instr=document.createElement('div'); instr.style.cssText='font-size:.75rem;color:var(--ink3)';
     instr.textContent='What comes next? Say the next line';
     prompt.appendChild(instr);
-    setTimeout(()=>speakFi(line.text), 400);
-    renderChSpeakGap(optsArea, item._nextLine.text, q, {longForm:true, maxMs:8000});
+    setTimeout(()=>playChLineAudio(line, item.songObj), 400);
+    renderChSpeakGap(optsArea, item._nextLine.text, q, {longForm:true, maxMs:8000, audioLine:item._nextLine, audioSong:item.songObj});
 
   } else if(q.type==='ch_cloze_speak'){
     const blanked = clozeBlank(line.text, item._clozeWord);
     const cue=document.createElement('button'); cue.className='ch-audio-cue'; cue.textContent='🔊';
-    cue.addEventListener('click', ()=>speakFi(line.text));
+    cue.addEventListener('click', ()=>playChLineAudio(line, item.songObj));
     prompt.appendChild(cue);
     const lineDiv=document.createElement('div'); lineDiv.style.cssText='font-size:1rem;color:var(--ink);margin-top:4px';
     lineDiv.innerHTML=blanked || esc(line.text);
@@ -1372,7 +1366,7 @@ function renderChProduction(q, prompt, optsArea){
     const shownPart = words.slice(0, showCount).join(' ');
     const hiddenPart = words.slice(showCount).join(' ');
     const cue=document.createElement('button'); cue.className='ch-audio-cue'; cue.textContent='🔊';
-    cue.addEventListener('click', ()=>speakFi(line.text));
+    cue.addEventListener('click', ()=>playChLineAudio(line, item.songObj));
     prompt.appendChild(cue);
     const lineDiv=document.createElement('div'); lineDiv.style.cssText='font-size:1rem;color:var(--ink);margin-top:4px';
     lineDiv.innerHTML=esc(shownPart)+' <span style="color:var(--ink3)">…</span>';
@@ -1380,19 +1374,22 @@ function renderChProduction(q, prompt, optsArea){
     const instr=document.createElement('div'); instr.style.cssText='font-size:.75rem;color:var(--ink3)';
     instr.textContent='Finish the line';
     prompt.appendChild(instr);
-    renderChSpeakGap(optsArea, hiddenPart, q, {longForm:true, maxMs:6000, revealText:line.text});
+    renderChSpeakGap(optsArea, hiddenPart, q, {longForm:true, maxMs:6000, revealText:line.text, audioLine:line, audioSong:item.songObj});
   }
 }
 
 // ── Daily Challenge shared speak gap (reuses game STT engine) ──
 function renderChSpeakGap(container, target, q, opts={}){
-  const { longForm=false, maxMs=3000, revealText=null } = opts;
+  const { longForm=false, maxMs=3000, revealText=null, audioLine=null, audioSong=null } = opts;
+  const revealAudio = ()=>{ if(audioLine) playChLineAudio(audioLine, audioSong); else speakFi(target); };
   const micArea=document.createElement('div'); micArea.className='lq-mic-area';
   const mic=document.createElement('button'); mic.className='lq-mic'; mic.textContent='🎤';
   const result=document.createElement('div'); result.className='lq-result';
   const answer=document.createElement('div'); answer.style.cssText='font-size:.82rem;color:var(--ink3);margin-top:4px';
   micArea.append(mic,result,answer); container.appendChild(micArea);
 
+  // Reveal the source song + show the (already-present) Next/Done button.
+  // No auto-advance — the user taps Next when ready so answers are never cut off.
   const finishCh = (scored)=>{
     const fb = $('ch-feedback'); fb.classList.remove('hidden');
     fb.innerHTML = (scored?'✓ ':'') + `From: <b>"${esc(q.correctTitle)}"</b>`;
@@ -1406,20 +1403,20 @@ function renderChSpeakGap(container, target, q, opts={}){
     if(chLocked||mic.classList.contains('recording')) return;
     const gapObj={ target, el:micArea, micBtn:mic, resultEl:result, done:false, maxMs, longForm,
       onMatch:()=>{ chScore++; chLocked=true; mic.classList.add('ok'); answer.textContent='✓ Correct!';
-        speakFi(target); setTimeout(()=>finishCh(true),1400); }};
+        revealAudio(); finishCh(true); }};
     startGapRecord(gapObj);
     setTimeout(()=>{ if(!gapObj.done && result.classList.contains('miss')){
       chLocked=true;
       answer.innerHTML=`Answer: <b>${esc(revealText||target)}</b>`;
-      speakFi(target); setTimeout(()=>finishCh(false),1800);
+      revealAudio(); finishCh(false);
     }}, maxMs+1500);
   });
 
   const skip=document.createElement('button'); skip.className='btn btn-ghost'; skip.style.cssText='margin-top:8px;font-size:.82rem';
   skip.textContent='Reveal answer';
   skip.addEventListener('click', ()=>{ if(chLocked)return; chLocked=true;
-    result.textContent=revealText||target; answer.textContent='↑'; speakFi(target);
-    setTimeout(()=>finishCh(false),1600); });
+    result.textContent=revealText||target; answer.textContent='↑'; revealAudio();
+    finishCh(false); });
   container.appendChild(skip);
 }
 
@@ -1443,7 +1440,7 @@ function handleChAnswer(pickedId, q, optsContainer){
     fb.textContent = `✗ It was from "${q.correctTitle}"`;
     fb.style.color = '#dc2626';
     // replay the line from the correct song as a mini-review
-    setTimeout(()=> speakFi(q.line.text), 600);
+    setTimeout(()=> playChLineAudio(q.line, q._item&&q._item.songObj), 600);
   }
 
   $('ch-skip-btn').classList.add('hidden');
@@ -1452,6 +1449,7 @@ function handleChAnswer(pickedId, q, optsContainer){
 }
 
 async function finishChallenge(){
+  stopAudio();
   $('challenge-overlay').classList.add('hidden');
   // save state
   await store.set('challenge-state', { lastDate:todayStr(), completed:true, score:chScore });
@@ -1502,7 +1500,7 @@ async function aggregateVerbs(){
         const songKey = (meta.title||'').trim().toLowerCase();
         if(line.text && !verbs[key].seen.has(songKey)){
           verbs[key].seen.add(songKey);
-          verbs[key].sentences.push({ text:line.text, surface:vb.surface, song:meta.title, english:line.english||'', roman:line.roman||null });
+          verbs[key].sentences.push({ text:line.text, surface:vb.surface, song:meta.title, english:line.english||'', roman:line.roman||null, videoId:s.videoId||null, start:line.start, end:line.end });
         }
       });
     }));
@@ -1566,7 +1564,34 @@ async function renderLibrary(){
   });
 }
 
-// ── Library Quiz (meaning-match · sentence cloze · speak-the-word · audio→type) ──
+// ── Library Quiz — 9 types with YouTube audio support ──
+// Play quiz audio: prefer YouTube segment, fallback to TTS
+let _quizVideoId = null;
+function playQuizAudio(text, videoId, start, end, cb){
+  stopAudio(); // stop any playing segment/TTS first
+  if(videoId && start!=null && end!=null && ytState!=='failed'){
+    const play = ()=> playSegment(start, end, cb);
+    if(ytState==='ready'){
+      if(_quizVideoId===videoId){ play(); return; }
+      _quizVideoId = videoId;
+      try{ ytPlayer.loadVideoById({videoId, startSeconds:start}); }
+      catch(e){ speakFi(text, cb); return; }
+      setTimeout(play, 500); // brief delay for the video switch to take effect
+      return;
+    }
+    // player not yet loaded — load it, then play (or fall back to TTS)
+    loadYT(videoId, ok=>{
+      if(ok){ _quizVideoId=videoId; play(); }
+      else speakFi(text, cb);
+    });
+    return;
+  }
+  speakFi(text, cb); // no video data (or YT unavailable) → TTS fallback
+}
+// Shorthand for quiz items (Library Quiz pool items have videoId/start/end directly)
+function playItemAudio(item, cb){ playQuizAudio(item.line, item.videoId, item.start, item.end, cb); }
+// Shorthand for Daily Challenge items (line object has start/end, songObj has videoId)
+function playChLineAudio(line, songObj, cb){ playQuizAudio(line.text, songObj&&songObj.videoId, line.start, line.end, cb); }
 // No dictionary/inflected-form questions: every item is grounded in a real lyric line.
 let lqItems=[], lqIdx=0, lqScore=0, lqTotal=10, lqLocked=false;
 
@@ -1577,8 +1602,7 @@ async function buildQuizPool(){
   verbs.forEach(v=>{
     (v.sentences||[]).forEach(s=>{
       if(!s.text || !s.surface) return;
-      // need the surface to actually occur in the line (for cloze/highlight)
-      pool.push({ word:s.surface, line:s.text, english:s.english||'', roman:s.roman||null, song:s.song });
+      pool.push({ word:s.surface, line:s.text, english:s.english||'', roman:s.roman||null, song:s.song, videoId:s.videoId||null, start:s.start, end:s.end });
     });
   });
   // Enrich pool with nextLine for chain_recall (consecutive line pairs)
@@ -1592,7 +1616,7 @@ async function buildQuizPool(){
         pool.forEach(p=>{
           if(!p.nextLine && normalizeText(p.line)===nCurr &&
              (p.song||'').trim().toLowerCase()===songTitle){
-            p.nextLine = { text:vs.lines[i+1].text, english:vs.lines[i+1].english||'', roman:vs.lines[i+1].roman||null };
+            p.nextLine = { text:vs.lines[i+1].text, english:vs.lines[i+1].english||'', roman:vs.lines[i+1].roman||null, start:vs.lines[i+1].start, end:vs.lines[i+1].end };
           }
         });
       }
@@ -1624,7 +1648,19 @@ function otherWords(exclude, n){
   return shuffle(all).slice(0,n);
 }
 
-function quizNext(){ lqIdx++; lqLocked=false; renderVerbQuizQ(); }
+function quizNext(){ stopAudio(); lqIdx++; lqLocked=false; renderVerbQuizQ(); }
+
+// Show a manual "Next →" button so answers are never cut off by auto-advance.
+// The user reviews their result, then taps Next when ready.
+function showQuizNext(quiz){
+  if(quiz.querySelector('.lq-next-btn')) return; // don't double-add
+  const btn=document.createElement('button');
+  btn.className='btn btn-brass lq-next lq-next-btn';
+  btn.textContent = (lqIdx>=lqTotal-1) ? 'See results →' : 'Next →';
+  btn.style.marginTop='10px';
+  btn.addEventListener('click', quizNext);
+  quiz.appendChild(btn);
+}
 
 function quizCounter(){
   const c=document.createElement('div'); c.className='lq-counter';
@@ -1676,8 +1712,10 @@ function renderVerbQuizQ(){
 }
 
 // ---------- shared speak-quiz renderer (STT mic + reveal + skip) ----------
+// audioItem (optional): quiz pool item whose YouTube segment plays on reveal
 function renderSpeakQuiz(quiz, target, opts={}){
-  const { longForm=false, maxMs=3000, afterDone=null, revealText=null } = opts;
+  const { longForm=false, maxMs=3000, afterDone=null, revealText=null, audioItem=null } = opts;
+  const revealAudio = ()=>{ if(audioItem) playItemAudio(audioItem); else speakFi(target); };
   const micArea=document.createElement('div'); micArea.className='lq-mic-area';
   const mic=document.createElement('button'); mic.className='lq-mic'; mic.textContent='🎤';
   const result=document.createElement('div'); result.className='lq-result';
@@ -1687,23 +1725,24 @@ function renderSpeakQuiz(quiz, target, opts={}){
   mic.addEventListener('click', ()=>{
     if(lqLocked||mic.classList.contains('recording')) return;
     const gapObj={ target, el:micArea, micBtn:mic, resultEl:result, done:false, maxMs, longForm,
-      onMatch:()=>{ lqScore++; mic.classList.add('ok'); answer.textContent='✓ Correct!';
+      onMatch:()=>{ lqScore++; lqLocked=true; mic.classList.add('ok'); answer.textContent='✓ Correct!';
         if(afterDone) afterDone(true);
-        setTimeout(quizNext,1600); }};
+        showQuizNext(quiz); }};
     startGapRecord(gapObj);
     setTimeout(()=>{ if(!gapObj.done && result.classList.contains('miss')){
+      lqLocked=true;
       answer.innerHTML=`Answer: <b>${esc(revealText||target)}</b>`;
-      speakFi(target);
+      revealAudio();
       if(afterDone) afterDone(false);
-      setTimeout(quizNext,2400);
+      showQuizNext(quiz);
     }}, maxMs+1500);
   });
   const skip=document.createElement('button'); skip.className='btn btn-ghost lq-next';
   skip.textContent='Reveal answer'; skip.style.marginTop='8px';
   skip.addEventListener('click', ()=>{ if(lqLocked)return; lqLocked=true;
-    result.textContent=revealText||target; answer.textContent='↑'; speakFi(target);
+    result.textContent=revealText||target; answer.textContent='↑'; revealAudio();
     if(afterDone) afterDone(false);
-    setTimeout(quizNext,1800); });
+    showQuizNext(quiz); });
   quiz.appendChild(skip);
 }
 
@@ -1723,7 +1762,7 @@ function qHearPickSentence(quiz, item){
   const wrongLines = shuffle(lqItems.filter(i=>i!==item && normalizeText(i.line)!==normalizeText(correct)))
     .slice(0,3).map(i=>i.line);
   const options = shuffle([correct, ...wrongLines]);
-  mcq(quiz, options, correct, ()=>{ speakFi(item.line); });
+  mcq(quiz, options, correct, ()=>{ playItemAudio(item); });
 }
 
 // ---------- Q type 2: see Finnish sentence → pick which word appears in it ----------
@@ -1736,7 +1775,7 @@ function qReadPickWord(quiz, item){
   const correct = item.word;
   const wrongs = otherWords(correct, 3);
   const options = shuffle([correct, ...wrongs]);
-  mcq(quiz, options, correct, ()=>{ speakFi(item.line); });
+  mcq(quiz, options, correct, ()=>{ playItemAudio(item); });
 }
 
 // ---------- Q type 3: sentence cloze — read line with word blanked → type it ----------
@@ -1748,8 +1787,8 @@ function qClozeType(quiz, item){
     `<div style="font-size:1rem;color:var(--ink);margin-top:4px">${blanked}</div>`+
     `<div style="font-size:.75rem;color:var(--ink3)">Type the missing word</div>`;
   quiz.appendChild(prompt);
-  prompt.querySelector('.lq-audio-cue').addEventListener('click', ()=>speakFi(item.line));
-  typeAnswer(quiz, item.word, ()=>{ speakFi(item.line); });
+  prompt.querySelector('.lq-audio-cue').addEventListener('click', ()=>playItemAudio(item));
+  typeAnswer(quiz, item.word, ()=>{ playItemAudio(item); });
 }
 
 // ---------- Q type 4: audio cloze — listen first + see cloze → type missing word ----------
@@ -1761,9 +1800,9 @@ function qAudioCloze(quiz, item){
     `<div style="font-size:1rem;color:var(--ink);margin-top:4px">${blanked}</div>`+
     `<div style="font-size:.75rem;color:var(--ink3)">Type the missing word</div>`;
   quiz.appendChild(prompt);
-  prompt.querySelector('.lq-audio-cue').addEventListener('click', ()=>speakFi(item.line));
-  setTimeout(()=>speakFi(item.line), 350);
-  typeAnswer(quiz, item.word, ()=>{ speakFi(item.line); });
+  prompt.querySelector('.lq-audio-cue').addEventListener('click', ()=>playItemAudio(item));
+  setTimeout(()=>playItemAudio(item), 350);
+  typeAnswer(quiz, item.word, ()=>{ playItemAudio(item); });
 }
 
 // ---------- Q type 5: cloze speak — see cloze → say the missing word ----------
@@ -1775,22 +1814,22 @@ function qClozeSpeak(quiz, item){
     `<div style="font-size:1rem;color:var(--ink);margin-top:4px">${blanked}</div>`+
     `<div style="font-size:.75rem;color:var(--ink3)">Say the missing word</div>`;
   quiz.appendChild(prompt);
-  prompt.querySelector('.lq-audio-cue').addEventListener('click', ()=>speakFi(item.line));
-  renderSpeakQuiz(quiz, item.word, { maxMs:3000, afterDone:()=>speakFi(item.line) });
+  prompt.querySelector('.lq-audio-cue').addEventListener('click', ()=>playItemAudio(item));
+  renderSpeakQuiz(quiz, item.word, { maxMs:3000, afterDone:()=>playItemAudio(item) });
 }
 
 // ---------- Q type 6: audio echo — hear line → repeat it back ----------
 function qAudioEcho(quiz, item){
   const prompt=document.createElement('div'); prompt.className='lq-prompt';
   const cue=document.createElement('button'); cue.className='lq-audio-cue'; cue.title='Hear the line'; cue.textContent='🔊';
-  cue.addEventListener('click', ()=>speakFi(item.line));
+  cue.addEventListener('click', ()=>playItemAudio(item));
   prompt.appendChild(cue);
   const instr=document.createElement('div'); instr.style.cssText='font-size:.75rem;color:var(--ink3)';
   instr.textContent='Repeat what you hear';
   prompt.appendChild(instr);
   quiz.appendChild(prompt);
-  setTimeout(()=>speakFi(item.line), 350);
-  renderSpeakQuiz(quiz, item.line, { longForm:true, maxMs:8000, revealText:item.line });
+  setTimeout(()=>playItemAudio(item), 350);
+  renderSpeakQuiz(quiz, item.line, { longForm:true, maxMs:8000, revealText:item.line, audioItem:item });
 }
 
 // ---------- Q type 7: translation → speak — see English → say Finnish ----------
@@ -1809,14 +1848,14 @@ function qTranslationSpeak(quiz, item){
     else { hintDiv.classList.add('hidden'); }
   });
   hintWrap.appendChild(hintBtn); hintWrap.appendChild(hintDiv); quiz.appendChild(hintWrap);
-  renderSpeakQuiz(quiz, item.line, { longForm:true, maxMs:8000, revealText:item.line });
+  renderSpeakQuiz(quiz, item.line, { longForm:true, maxMs:8000, revealText:item.line, audioItem:item });
 }
 
 // ---------- Q type 8: chain recall — see/hear line N → speak line N+1 ----------
 function qChainRecall(quiz, item){
   const prompt=document.createElement('div'); prompt.className='lq-prompt';
   const cue=document.createElement('button'); cue.className='lq-audio-cue'; cue.title='Hear this line'; cue.textContent='🔊';
-  cue.addEventListener('click', ()=>speakFi(item.line));
+  cue.addEventListener('click', ()=>playItemAudio(item));
   prompt.appendChild(cue);
   const lineDiv=document.createElement('div'); lineDiv.style.cssText='font-size:1rem;color:var(--ink);margin-top:4px';
   lineDiv.textContent=item.line;
@@ -1826,8 +1865,10 @@ function qChainRecall(quiz, item){
   instr.textContent='What comes next? Say the next line';
   prompt.appendChild(instr);
   quiz.appendChild(prompt);
-  setTimeout(()=>speakFi(item.line), 350);
-  renderSpeakQuiz(quiz, item.nextLine.text, { longForm:true, maxMs:8000, revealText:item.nextLine.text });
+  setTimeout(()=>playItemAudio(item), 350);
+  // the answer is the NEXT line — play its own YouTube segment on reveal
+  const nextItem = { line:item.nextLine.text, videoId:item.videoId, start:item.nextLine.start, end:item.nextLine.end };
+  renderSpeakQuiz(quiz, item.nextLine.text, { longForm:true, maxMs:8000, revealText:item.nextLine.text, audioItem:nextItem });
 }
 
 // ---------- Q type 9: first words finish — see start → speak the rest ----------
@@ -1838,7 +1879,7 @@ function qFirstWordsFinish(quiz, item){
   const hiddenPart = words.slice(showCount).join(' ');
   const prompt=document.createElement('div'); prompt.className='lq-prompt';
   const cue=document.createElement('button'); cue.className='lq-audio-cue'; cue.title='Hear the full line'; cue.textContent='🔊';
-  cue.addEventListener('click', ()=>speakFi(item.line));
+  cue.addEventListener('click', ()=>playItemAudio(item));
   prompt.appendChild(cue);
   const lineDiv=document.createElement('div'); lineDiv.style.cssText='font-size:1rem;color:var(--ink);margin-top:4px';
   lineDiv.innerHTML=esc(shownPart)+' <span style="color:var(--ink3)">…</span>';
@@ -1847,7 +1888,7 @@ function qFirstWordsFinish(quiz, item){
   instr.textContent='Finish the line';
   prompt.appendChild(instr);
   quiz.appendChild(prompt);
-  renderSpeakQuiz(quiz, hiddenPart, { longForm:true, maxMs:6000, revealText:item.line });
+  renderSpeakQuiz(quiz, hiddenPart, { longForm:true, maxMs:6000, revealText:item.line, audioItem:item });
 }
 
 // ---------- shared MCQ renderer ----------
@@ -1864,7 +1905,7 @@ function mcq(quiz, options, correct, onResolve){
         x.style.pointerEvents='none';
       });
       if(onResolve) setTimeout(onResolve, 350);
-      setTimeout(quizNext, 1700);
+      showQuizNext(quiz);
     });
     optsDiv.appendChild(b);
   });
@@ -1888,7 +1929,7 @@ function typeAnswer(quiz, correct, onResolve){
     else { inp.classList.add('inp-err'); answer.innerHTML=`Answer: <b>${esc(correct)}</b>`; answer.className='lq-result miss'; }
     inp.disabled=true; btn.disabled=true;
     if(onResolve) setTimeout(onResolve, 300);
-    setTimeout(quizNext, ok?1500:2300);
+    showQuizNext(wrap);
   };
   btn.addEventListener('click', submit);
   inp.addEventListener('keydown', e=>{ if(e.key==='Enter') submit(); });
@@ -3886,8 +3927,8 @@ $('share-confirm-btn').addEventListener('click', confirmShare);
 $('home-fab').addEventListener('click', ()=>{ stopAudio(); spkCleanup(); renderHome(); });
 $('lib-back-btn').addEventListener('click', renderHome);
 $('lib-quiz-btn').addEventListener('click', startVerbQuiz);
-$('ch-skip-btn').addEventListener('click', ()=>{ $('challenge-overlay').classList.add('hidden'); });
-$('ch-next-btn').addEventListener('click', ()=>{ chIdx++; renderChQuestion(); });
+$('ch-skip-btn').addEventListener('click', ()=>{ stopAudio(); $('challenge-overlay').classList.add('hidden'); });
+$('ch-next-btn').addEventListener('click', ()=>{ stopAudio(); chIdx++; renderChQuestion(); });
 $('ch-done-btn').addEventListener('click', finishChallenge);
 $('import-back-btn').addEventListener('click', renderHome);
 $('analyze-btn').addEventListener('click', analyze);
