@@ -3426,6 +3426,16 @@ async function getMic(){
   catch(e){ return null; }
 }
 
+// Pick a MediaRecorder MIME type the current browser actually supports.
+// iOS Safari records audio/mp4 (AAC) and does NOT support audio/webm — using
+// a hardcoded webm type there yields an empty/unplayable blob, so playback fails.
+function pickRecMime(){
+  const cands = ['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/aac',''];
+  if(typeof MediaRecorder==='undefined' || !MediaRecorder.isTypeSupported) return '';
+  for(const t of cands){ if(t==='' || MediaRecorder.isTypeSupported(t)) return t; }
+  return '';
+}
+
 // cleanup any active recordings on verse/level change
 function spkCleanup(){
   if(activeSTT){ try{activeSTT.abort()}catch(e){} activeSTT=null; }
@@ -3501,18 +3511,26 @@ function startGapRecord(gap){
       noMicFallback(gap);
       return;
     }
-    const rec = new MediaRecorder(stream);
+    const recMime = pickRecMime();
+    const rec = recMime ? new MediaRecorder(stream, {mimeType:recMime}) : new MediaRecorder(stream);
     activeRec = rec;
-    rec.ondataavailable = e=> chunks.push(e.data);
+    rec.ondataavailable = e=>{ if(e.data && e.data.size>0) chunks.push(e.data); };
     rec.onstop = ()=>{
       activeRec = null;
       btn.classList.remove('recording'); btn.textContent='🎤';
-      const blob = new Blob(chunks, {type:'audio/webm'});
-      const url = URL.createObjectURL(blob);
-      addPlaybackBtn(gap.el, url);
-      if(isShadowMode()) showShadowJudge(gap, url);
+      // use the recorder's actual mime so the blob is playable (esp. iOS mp4)
+      const blobType = (rec.mimeType || recMime || 'audio/webm').split(';')[0];
+      const blob = new Blob(chunks, {type:blobType});
+      if(blob.size>0){
+        const url = URL.createObjectURL(blob);
+        addPlaybackBtn(gap.el, url);
+        if(isShadowMode()) showShadowJudge(gap, url);
+      } else if(isShadowMode()){
+        // no audio captured — fall back to self-judge without playback
+        showShadowJudge(gap, null);
+      }
     };
-    rec.start();
+    rec.start(250); // timeslice: flush chunks periodically (more reliable on iOS Safari)
 
     // STT (only in non-shadow mode) — Finnish-forced
     if(!isShadowMode() && SRClass){
@@ -3640,8 +3658,8 @@ function addPlaybackBtn(container, url){
 }
 
 function showShadowJudge(gap, url){
-  // auto-play recording
-  new Audio(url).play();
+  // auto-play recording (skip if no audio was captured)
+  if(url){ try{ new Audio(url).play(); }catch(e){} }
   const div = document.createElement('div'); div.className='shadow-judge';
   const yes = document.createElement('button'); yes.textContent='✓'; yes.title='I said it right';
   const no = document.createElement('button'); no.textContent='✗'; no.title='Try again';
@@ -3706,7 +3724,7 @@ function renderL8(){
           const mic = document.createElement('button'); mic.className='mic-btn'; mic.textContent='🎤';
           const res = document.createElement('span'); res.className='spk-result';
           span.appendChild(mic); span.appendChild(res);
-          const gapObj = {target:verb.surface, el:span, micBtn:mic, resultEl:res, done:false, maxMs:3000,
+          const gapObj = {target:verb.surface, el:span, micBtn:mic, resultEl:res, done:false, maxMs:3000, longForm:true,
             onMatch:()=>{ gapObj.done=true; checkSpkComplete(); }};
           spkGaps.push(gapObj);
           mic.addEventListener('click', e=>{e.stopPropagation(); if(!mic.classList.contains('recording')&&!mic.classList.contains('ok')) startGapRecord(gapObj);});
@@ -3751,7 +3769,7 @@ function renderL9(){
         const mic = document.createElement('button'); mic.className='mic-btn'; mic.textContent='🎤';
         const res = document.createElement('span'); res.className='spk-result';
         span.appendChild(mic); span.appendChild(res);
-        const gapObj = {target:w, el:span, micBtn:mic, resultEl:res, done:false, maxMs:3000,
+        const gapObj = {target:w, el:span, micBtn:mic, resultEl:res, done:false, maxMs:3000, longForm:true,
           onMatch:()=>{ gapObj.done=true; checkSpkComplete(); }};
         spkGaps.push(gapObj);
         mic.addEventListener('click', e=>{e.stopPropagation(); if(!mic.classList.contains('recording')&&!mic.classList.contains('ok')) startGapRecord(gapObj);});
