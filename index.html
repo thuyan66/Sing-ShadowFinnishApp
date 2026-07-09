@@ -715,7 +715,7 @@ textarea{min-height:130px;line-height:1.7}
       <h3>Share this song?</h3>
       <div class="sh-song" id="share-title"></div>
       <div class="sh-meta" id="share-wordcount"></div>
-      <div class="sh-note">Your song's tagged lyrics, timing, and verbs will be shared — no translation is included. It becomes public in the community library once it passes review.</div>
+      <div class="sh-note">Your song's tagged lyrics, timing, and verbs will be copied — no translation is included. GitHub will open with a prefilled title: just <b>paste into the body</b> and click <b>Submit new issue</b>. It becomes public in the community library once it passes review.</div>
       <div class="sh-btns">
         <button class="btn btn-ghost" id="share-cancel-btn">Cancel</button>
         <button class="btn btn-brass" id="share-confirm-btn">Submit</button>
@@ -2128,37 +2128,31 @@ function openShareModal(){
 }
 function closeShareModal(){ $('share-overlay').classList.add('hidden'); }
 
-// ── Cloudflare Worker endpoint that creates the GitHub Issue on the user's behalf.
-// If you ever redeploy the Worker to a new address, change this one line.
-const SUBMIT_ENDPOINT = 'https://REPLACE-WITH-YOUR-WORKER.workers.dev';
-
 async function confirmShare(){
   const payload = buildSharePayload(song);
-  const btn = $('share-confirm-btn');
-  if(btn){ btn.disabled = true; btn.textContent = 'Submitting…'; }
+  // Compact JSON — issue bodies have a ~65k char limit; a full song fits easily.
+  const bodyText = `Submitting this song to the community Finnish library.\n\nPlease do not edit the block below — it is parsed automatically.\n\n\`\`\`json\n${JSON.stringify(payload)}\n\`\`\`\n`;
+  const title = '[Song Submission] ' + song.title;
+  // Prefilled-URL body would exceed GitHub's URL limit for any real song,
+  // so the designed flow is: copy body → open issue with title prefilled → user pastes once.
   try{
-    const res = await fetch(SUBMIT_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ song: payload })
-    });
-    if(res.status === 429){
-      toast('You\'ve submitted a lot recently — please try again in a little while.');
-      return;
-    }
-    if(!res.ok) throw new Error('HTTP ' + res.status);
+    await navigator.clipboard.writeText(bodyText);
   }catch(e){
-    toast('Could not submit right now — check your connection and try again.');
+    toast('Could not copy to clipboard — please allow clipboard access and try again.');
     return;
-  }finally{
-    if(btn){ btn.disabled = false; btn.textContent = 'Submit'; }
   }
+  const url = `https://github.com/${COMM_REPO_OWNER}/${COMM_REPO_NAME}/issues/new?title=${encodeURIComponent(title)}`;
+  const opened = window.open(url, '_blank');
+  if(!opened){
+    toast('Popup blocked — song data is copied; open GitHub Issues manually and paste.');
+    return;
+  }
+  toast('Song copied! Paste it into the issue body on GitHub, then click Submit new issue.');
   const submitted = (await store.get('community-submitted')) || {};
   submitted[song.id] = true;
   await store.set('community-submitted', submitted);
   closeShareModal();
   await updateSharePill();
-  toast('Submitted! 🌱');
 }
 
 // ═══════ AI ANALYSIS (Claude API — artifact or user-key mode) ═══════
