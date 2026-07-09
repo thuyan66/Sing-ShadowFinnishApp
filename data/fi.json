@@ -1267,5 +1267,483 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Millainen sää on tänään?",
+    "videoId": "5ELyePTuGjo",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-09T20:45:51.196Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "millainen sää on tänään millainen keli on x2",
+            "start": 7.2491948607635495,
+            "end": 20.439111917984008,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olen"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "sataa vettä vettä vettä ja märkää on x2",
+            "start": 20.439111917984008,
+            "end": 34.7634578588562,
+            "verbs": [
+              {
+                "surface": "sataa",
+                "infinitive": "sataa",
+                "options": [
+                  {
+                    "form": "sataa"
+                  },
+                  {
+                    "form": "sadoin"
+                  },
+                  {
+                    "form": "satoi"
+                  },
+                  {
+                    "form": "satavat"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olen"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "millainen sää on tänään millainen keli on x2",
+            "start": 34.7634578588562,
+            "end": 47.79021006484985,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olevat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "sataa lunta lunta lunta ja kylmää on x2",
+            "start": 47.79021006484985,
+            "end": 61.67685503623962,
+            "verbs": [
+              {
+                "surface": "sataa",
+                "infinitive": "sataa",
+                "options": [
+                  {
+                    "form": "sataa"
+                  },
+                  {
+                    "form": "satoi"
+                  },
+                  {
+                    "form": "satavat"
+                  },
+                  {
+                    "form": "satamassa"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olevat"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "millainen sää on tänään millainen keli on x2",
+            "start": 61.67685503623962,
+            "end": 75.14047800381469,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olevat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "paistaa aurinko aurinko aurinko ja lämmin on x2",
+            "start": 75.14047800381469,
+            "end": 89.05763896376038,
+            "verbs": [
+              {
+                "surface": "paistaa",
+                "infinitive": "paistaa",
+                "options": [
+                  {
+                    "form": "paistaa"
+                  },
+                  {
+                    "form": "paistoi"
+                  },
+                  {
+                    "form": "paistavat"
+                  },
+                  {
+                    "form": "paistaisin"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olevat"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "millainen sää on tänään millainen keli on x2",
+            "start": 89.05763896376038,
+            "end": 103.38073514686585,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisi"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tuulee tuulee tuulee ja myrskyistä on x2",
+            "start": 103.38073514686585,
+            "end": 116.73488408392333,
+            "verbs": [
+              {
+                "surface": "tuulee",
+                "infinitive": "tuulla",
+                "options": [
+                  {
+                    "form": "tuulee"
+                  },
+                  {
+                    "form": "tuuli"
+                  },
+                  {
+                    "form": "tuulisi"
+                  },
+                  {
+                    "form": "tuullut"
+                  }
+                ]
+              },
+              {
+                "surface": "tuulee",
+                "infinitive": "tuulla",
+                "options": [
+                  {
+                    "form": "tuulee"
+                  },
+                  {
+                    "form": "tuuli"
+                  },
+                  {
+                    "form": "tuulisi"
+                  },
+                  {
+                    "form": "tuullut"
+                  }
+                ]
+              },
+              {
+                "surface": "tuulee",
+                "infinitive": "tuulla",
+                "options": [
+                  {
+                    "form": "tuulee"
+                  },
+                  {
+                    "form": "tuuli"
+                  },
+                  {
+                    "form": "tuulisi"
+                  },
+                  {
+                    "form": "tuullut"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisi"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "millainen sää on tänään millainen keli on x2",
+            "start": 116.73488408392333,
+            "end": 130.3848209256134,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisi"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "ovat"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "olisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "salamoi salamoi salamoi ja ukkostaa x2",
+            "start": 130.3848209256134,
+            "end": 144.49366595422364,
+            "verbs": [
+              {
+                "surface": "salamoi",
+                "infinitive": "salamoida",
+                "options": [
+                  {
+                    "form": "salamoi"
+                  },
+                  {
+                    "form": "salamoin"
+                  },
+                  {
+                    "form": "salamoivat"
+                  },
+                  {
+                    "form": "salamoisi"
+                  }
+                ]
+              },
+              {
+                "surface": "salamoi",
+                "infinitive": "salamoida",
+                "options": [
+                  {
+                    "form": "salamoi"
+                  },
+                  {
+                    "form": "salamoin"
+                  },
+                  {
+                    "form": "salamoivat"
+                  },
+                  {
+                    "form": "salamoisi"
+                  }
+                ]
+              },
+              {
+                "surface": "salamoi",
+                "infinitive": "salamoida",
+                "options": [
+                  {
+                    "form": "salamoi"
+                  },
+                  {
+                    "form": "salamoin"
+                  },
+                  {
+                    "form": "salamoivat"
+                  },
+                  {
+                    "form": "salamoisi"
+                  }
+                ]
+              },
+              {
+                "surface": "ukkostaa",
+                "infinitive": "ukkostaa",
+                "options": [
+                  {
+                    "form": "ukkostaa"
+                  },
+                  {
+                    "form": "ukkostan"
+                  },
+                  {
+                    "form": "ukkostavat"
+                  },
+                  {
+                    "form": "ukkostaisi"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
