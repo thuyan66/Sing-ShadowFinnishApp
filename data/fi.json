@@ -1745,5 +1745,84 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Pää olkapää peppu polvet varpaat",
+    "videoId": "19ZdvA1fvXM",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-09T21:33:24.229Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "pää olkapää peppu polvet varpaat",
+            "start": 54.32059216784668,
+            "end": 58.3,
+            "verbs": []
+          },
+          {
+            "text": "polvet varpaat",
+            "start": 58.3,
+            "end": 60.31064398664856,
+            "verbs": []
+          },
+          {
+            "text": "pää olkapää peppu polvet varpaat",
+            "start": 60.31064398664856,
+            "end": 63.98874112779235,
+            "verbs": []
+          },
+          {
+            "text": "polvet varpaat",
+            "start": 63.98874112779235,
+            "end": 66.02568390081787,
+            "verbs": []
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "silmät korvat ja vatsaa taputa",
+            "start": 66.02568390081787,
+            "end": 71.1,
+            "verbs": [
+              {
+                "surface": "taputa",
+                "infinitive": "taputtaa",
+                "options": [
+                  {
+                    "form": "taputan"
+                  },
+                  {
+                    "form": "taputat"
+                  },
+                  {
+                    "form": "taputtaa"
+                  },
+                  {
+                    "form": "taputa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "pää olkapää peppu polvet varpaat",
+            "start": 71.1,
+            "end": 75.01394695994568,
+            "verbs": []
+          },
+          {
+            "text": "polvet varpaat",
+            "start": 75.01394695994568,
+            "end": 76.9,
+            "verbs": []
+          }
+        ]
+      }
+    ]
   }
 ]
