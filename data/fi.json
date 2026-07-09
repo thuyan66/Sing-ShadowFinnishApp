@@ -2393,5 +2393,755 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Puistopartio - Työkoneiden jumppalaulu",
+    "videoId": "36sn5mryB7c",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-09T22:39:56.193Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "nosta nosta nosta",
+            "start": 6.562505099182129,
+            "end": 9.803757937057496,
+            "verbs": []
+          },
+          {
+            "text": "nosta niin kuin nosturi",
+            "start": 9.803757937057496,
+            "end": 18.95,
+            "verbs": [
+              {
+                "surface": "nosta",
+                "infinitive": "nostaa",
+                "options": [
+                  {
+                    "form": "nosta"
+                  },
+                  {
+                    "form": "nostan"
+                  },
+                  {
+                    "form": "nostat"
+                  },
+                  {
+                    "form": "nostaa"
+                  },
+                  {
+                    "form": "nostamme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jokaista tarvitaan",
+            "start": 18.95,
+            "end": 28.167313127792358,
+            "verbs": [
+              {
+                "surface": "tarvitaan",
+                "infinitive": "tarvita",
+                "options": [
+                  {
+                    "form": "tarvitaan"
+                  },
+                  {
+                    "form": "tarvitsen"
+                  },
+                  {
+                    "form": "tarvitset"
+                  },
+                  {
+                    "form": "tarvitsee"
+                  },
+                  {
+                    "form": "tarvitsemme"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "kaiva kaiva kaiva",
+            "start": 28.167313127792358,
+            "end": 31.559136183105466,
+            "verbs": [
+              {
+                "surface": "kaiva",
+                "infinitive": "kaivaa",
+                "options": [
+                  {
+                    "form": "kaiva"
+                  },
+                  {
+                    "form": "kaivaa"
+                  },
+                  {
+                    "form": "kaivan"
+                  },
+                  {
+                    "form": "kaivoi"
+                  },
+                  {
+                    "form": "kaivaisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kaiva niin kuin kaivuri",
+            "start": 31.559136183105466,
+            "end": 40.79044294468689,
+            "verbs": [
+              {
+                "surface": "kaiva",
+                "infinitive": "kaivaa",
+                "options": [
+                  {
+                    "form": "kaiva"
+                  },
+                  {
+                    "form": "kaivaa"
+                  },
+                  {
+                    "form": "kaivan"
+                  },
+                  {
+                    "form": "kaivoi"
+                  },
+                  {
+                    "form": "kaivaisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jokaista tarvitaan",
+            "start": 40.79044294468689,
+            "end": 50.26939222125244,
+            "verbs": [
+              {
+                "surface": "tarvitaan",
+                "infinitive": "tarvita",
+                "options": [
+                  {
+                    "form": "tarvitaan"
+                  },
+                  {
+                    "form": "tarvitsen"
+                  },
+                  {
+                    "form": "tarvitsi"
+                  },
+                  {
+                    "form": "tarvittaisiin"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "työnnä työnnä työnnä",
+            "start": 50.26939222125244,
+            "end": 52.96911201144409,
+            "verbs": [
+              {
+                "surface": "työnnä",
+                "infinitive": "työntää",
+                "options": [
+                  {
+                    "form": "työnnä"
+                  },
+                  {
+                    "form": "työntää"
+                  },
+                  {
+                    "form": "työnsin"
+                  },
+                  {
+                    "form": "työntänyt"
+                  }
+                ]
+              },
+              {
+                "surface": "työnnä",
+                "infinitive": "työntää",
+                "options": [
+                  {
+                    "form": "työnnä"
+                  },
+                  {
+                    "form": "työntää"
+                  },
+                  {
+                    "form": "työnsin"
+                  },
+                  {
+                    "form": "työntänyt"
+                  }
+                ]
+              },
+              {
+                "surface": "työnnä",
+                "infinitive": "työntää",
+                "options": [
+                  {
+                    "form": "työnnä"
+                  },
+                  {
+                    "form": "työntää"
+                  },
+                  {
+                    "form": "työnsin"
+                  },
+                  {
+                    "form": "työntänyt"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "työnnä niin kuin puskutraktori",
+            "start": 52.96911201144409,
+            "end": 62.42804592752075,
+            "verbs": [
+              {
+                "surface": "työnnä",
+                "infinitive": "työntää",
+                "options": [
+                  {
+                    "form": "työnnä"
+                  },
+                  {
+                    "form": "työntää"
+                  },
+                  {
+                    "form": "työnsin"
+                  },
+                  {
+                    "form": "työntänyt"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jokaista tarvitaan",
+            "start": 62.42804592752075,
+            "end": 71.80126397711182,
+            "verbs": [
+              {
+                "surface": "tarvitaan",
+                "infinitive": "tarvita",
+                "options": [
+                  {
+                    "form": "tarvitaan"
+                  },
+                  {
+                    "form": "tarvitsen"
+                  },
+                  {
+                    "form": "tarvitsee"
+                  },
+                  {
+                    "form": "tarvittiin"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "pyöri pyöri pyöri",
+            "start": 71.80126397711182,
+            "end": 74.8546369256134,
+            "verbs": [
+              {
+                "surface": "pyöri",
+                "infinitive": "pyöriä",
+                "options": [
+                  {
+                    "form": "pyöri"
+                  },
+                  {
+                    "form": "pyörin"
+                  },
+                  {
+                    "form": "pyörii"
+                  },
+                  {
+                    "form": "pyörinyt"
+                  }
+                ]
+              },
+              {
+                "surface": "pyöri",
+                "infinitive": "pyöriä",
+                "options": [
+                  {
+                    "form": "pyöri"
+                  },
+                  {
+                    "form": "pyörin"
+                  },
+                  {
+                    "form": "pyörii"
+                  },
+                  {
+                    "form": "pyörinyt"
+                  }
+                ]
+              },
+              {
+                "surface": "pyöri",
+                "infinitive": "pyöriä",
+                "options": [
+                  {
+                    "form": "pyöri"
+                  },
+                  {
+                    "form": "pyörin"
+                  },
+                  {
+                    "form": "pyörii"
+                  },
+                  {
+                    "form": "pyörinyt"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "pyöri niin kuin betonimylly",
+            "start": 74.8546369256134,
+            "end": 84.2897260591278,
+            "verbs": [
+              {
+                "surface": "pyöri",
+                "infinitive": "pyöriä",
+                "options": [
+                  {
+                    "form": "pyöri"
+                  },
+                  {
+                    "form": "pyörin"
+                  },
+                  {
+                    "form": "pyörii"
+                  },
+                  {
+                    "form": "pyörinyt"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jokaista tarvitaan",
+            "start": 84.2897260591278,
+            "end": 93.92343187220764,
+            "verbs": [
+              {
+                "surface": "tarvitaan",
+                "infinitive": "tarvita",
+                "options": [
+                  {
+                    "form": "tarvitaan"
+                  },
+                  {
+                    "form": "tarvitsen"
+                  },
+                  {
+                    "form": "tarvitsee"
+                  },
+                  {
+                    "form": "tarvittiin"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "harjaa harjaa harjaa",
+            "start": 93.92343187220764,
+            "end": 96.8481900038147,
+            "verbs": [
+              {
+                "surface": "harjaa",
+                "infinitive": "harjata",
+                "options": [
+                  {
+                    "form": "harjaan"
+                  },
+                  {
+                    "form": "harjasi"
+                  },
+                  {
+                    "form": "harjaa"
+                  },
+                  {
+                    "form": "harjaisin"
+                  }
+                ]
+              },
+              {
+                "surface": "harjaa",
+                "infinitive": "harjata",
+                "options": [
+                  {
+                    "form": "harjaan"
+                  },
+                  {
+                    "form": "harjasi"
+                  },
+                  {
+                    "form": "harjaa"
+                  },
+                  {
+                    "form": "harjaisin"
+                  }
+                ]
+              },
+              {
+                "surface": "harjaa",
+                "infinitive": "harjata",
+                "options": [
+                  {
+                    "form": "harjaan"
+                  },
+                  {
+                    "form": "harjasi"
+                  },
+                  {
+                    "form": "harjaa"
+                  },
+                  {
+                    "form": "harjaisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "harjaa niin kuin lakaisuauto",
+            "start": 96.8481900038147,
+            "end": 106.55049190653992,
+            "verbs": [
+              {
+                "surface": "harjaa",
+                "infinitive": "harjata",
+                "options": [
+                  {
+                    "form": "harjaan"
+                  },
+                  {
+                    "form": "harjasi"
+                  },
+                  {
+                    "form": "harjaa"
+                  },
+                  {
+                    "form": "harjaisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jokaista tarvitaan",
+            "start": 106.55049190653992,
+            "end": 115.24189698474122,
+            "verbs": [
+              {
+                "surface": "tarvitaan",
+                "infinitive": "tarvita",
+                "options": [
+                  {
+                    "form": "tarvitsen"
+                  },
+                  {
+                    "form": "tarvitaan"
+                  },
+                  {
+                    "form": "tarvitsimme"
+                  },
+                  {
+                    "form": "tarvitsisin"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "kurota kurota kurota",
+            "start": 115.24189698474122,
+            "end": 118.57091498283386,
+            "verbs": [
+              {
+                "surface": "kurota",
+                "infinitive": "kurottaa",
+                "options": [
+                  {
+                    "form": "kurota"
+                  },
+                  {
+                    "form": "kurotin"
+                  },
+                  {
+                    "form": "kurottaa"
+                  },
+                  {
+                    "form": "kurottaisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kurota niin kuin kurottaja",
+            "start": 118.57091498283386,
+            "end": 128.10849101716613,
+            "verbs": [
+              {
+                "surface": "kurota",
+                "infinitive": "kurottaa",
+                "options": [
+                  {
+                    "form": "kurota"
+                  },
+                  {
+                    "form": "kurotin"
+                  },
+                  {
+                    "form": "kurottaa"
+                  },
+                  {
+                    "form": "kurottaisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jokaista tarvitaan",
+            "start": 128.10849101716613,
+            "end": 137.56139599046327,
+            "verbs": [
+              {
+                "surface": "tarvitaan",
+                "infinitive": "tarvita",
+                "options": [
+                  {
+                    "form": "tarvitaan"
+                  },
+                  {
+                    "form": "tarvitsen"
+                  },
+                  {
+                    "form": "tarvitsee"
+                  },
+                  {
+                    "form": "tarvitsimme"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "tartu tartu tartu",
+            "start": 137.56139599046327,
+            "end": 140.53555591989135,
+            "verbs": [
+              {
+                "surface": "tartu",
+                "infinitive": "tarttua",
+                "options": [
+                  {
+                    "form": "tartun"
+                  },
+                  {
+                    "form": "tarttuu"
+                  },
+                  {
+                    "form": "tartu"
+                  },
+                  {
+                    "form": "tarttuvat"
+                  }
+                ]
+              },
+              {
+                "surface": "tartu",
+                "infinitive": "tarttua",
+                "options": [
+                  {
+                    "form": "tartun"
+                  },
+                  {
+                    "form": "tarttuu"
+                  },
+                  {
+                    "form": "tartu"
+                  },
+                  {
+                    "form": "tarttuvat"
+                  }
+                ]
+              },
+              {
+                "surface": "tartu",
+                "infinitive": "tarttua",
+                "options": [
+                  {
+                    "form": "tartun"
+                  },
+                  {
+                    "form": "tarttuu"
+                  },
+                  {
+                    "form": "tartu"
+                  },
+                  {
+                    "form": "tarttuvat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tartu niin kuin kahmari",
+            "start": 140.53555591989135,
+            "end": 149.8055558779297,
+            "verbs": [
+              {
+                "surface": "tartu",
+                "infinitive": "tarttua",
+                "options": [
+                  {
+                    "form": "tartun"
+                  },
+                  {
+                    "form": "tarttuu"
+                  },
+                  {
+                    "form": "tartu"
+                  },
+                  {
+                    "form": "tarttuvat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tule puistopartion mukaan",
+            "start": 149.8055558779297,
+            "end": 153.3531741411438,
+            "verbs": [
+              {
+                "surface": "tule",
+                "infinitive": "tulla",
+                "options": [
+                  {
+                    "form": "tulen"
+                  },
+                  {
+                    "form": "tulee"
+                  },
+                  {
+                    "form": "tule"
+                  },
+                  {
+                    "form": "tulevat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jumpataan",
+            "start": 153.3531741411438,
+            "end": 156.27038110108947,
+            "verbs": [
+              {
+                "surface": "jumpataan",
+                "infinitive": "jumpata",
+                "options": [
+                  {
+                    "form": "jumpataan"
+                  },
+                  {
+                    "form": "jumpata"
+                  },
+                  {
+                    "form": "jumppaa"
+                  },
+                  {
+                    "form": "jumppasin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "rakennustyömaalla jokaista tarvitaan",
+            "start": 156.27038110108947,
+            "end": 163.8456320782013,
+            "verbs": [
+              {
+                "surface": "tarvitaan",
+                "infinitive": "tarvita",
+                "options": [
+                  {
+                    "form": "tarvitaan"
+                  },
+                  {
+                    "form": "tarvitsen"
+                  },
+                  {
+                    "form": "tarvitsee"
+                  },
+                  {
+                    "form": "tarvitsevat"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
