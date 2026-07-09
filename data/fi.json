@@ -1824,5 +1824,574 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Hämä-hämähäkki",
+    "videoId": "IotM4GhZevY",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-09T22:15:15.701Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "hämä hämähäkki kiipes langalle",
+            "start": 9.585987022888183,
+            "end": 14.75,
+            "verbs": [
+              {
+                "surface": "kiipes",
+                "infinitive": "kiivetä",
+                "options": [
+                  {
+                    "form": "kiipesin"
+                  },
+                  {
+                    "form": "kiipesit"
+                  },
+                  {
+                    "form": "kiipes"
+                  },
+                  {
+                    "form": "kiipesimme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tuli sade rankka hämähäkin vei",
+            "start": 14.75,
+            "end": 20.10979607247925,
+            "verbs": [
+              {
+                "surface": "tuli",
+                "infinitive": "tulla",
+                "options": [
+                  {
+                    "form": "tulen"
+                  },
+                  {
+                    "form": "tulee"
+                  },
+                  {
+                    "form": "tuli"
+                  },
+                  {
+                    "form": "tulevat"
+                  }
+                ]
+              },
+              {
+                "surface": "vei",
+                "infinitive": "viedä",
+                "options": [
+                  {
+                    "form": "vien"
+                  },
+                  {
+                    "form": "vie"
+                  },
+                  {
+                    "form": "vei"
+                  },
+                  {
+                    "form": "vievät"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "aurinko armas kuivas satehen",
+            "start": 20.10979607247925,
+            "end": 24.98203109918213,
+            "verbs": [
+              {
+                "surface": "kuivas",
+                "infinitive": "kuivata",
+                "options": [
+                  {
+                    "form": "kuivaan"
+                  },
+                  {
+                    "form": "kuivaat"
+                  },
+                  {
+                    "form": "kuivas"
+                  },
+                  {
+                    "form": "kuivaavat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "hämä hämähäkki kiipes uudelleen",
+            "start": 24.98203109918213,
+            "end": 30.029096902725218,
+            "verbs": [
+              {
+                "surface": "kiipes",
+                "infinitive": "kiivetä",
+                "options": [
+                  {
+                    "form": "kiipesin"
+                  },
+                  {
+                    "form": "kiipesit"
+                  },
+                  {
+                    "form": "kiipes"
+                  },
+                  {
+                    "form": "kiipesimme"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "muura muurahainen kortta kuljettaa",
+            "start": 30.029096902725218,
+            "end": 35.136399022888185,
+            "verbs": [
+              {
+                "surface": "kuljettaa",
+                "infinitive": "kuljettaa",
+                "options": [
+                  {
+                    "form": "kuljettaa"
+                  },
+                  {
+                    "form": "kuljetan"
+                  },
+                  {
+                    "form": "kuljetin"
+                  },
+                  {
+                    "form": "kuljettaa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ahkerasti työssään aina ahertaa",
+            "start": 35.136399022888185,
+            "end": 40.278867078201294,
+            "verbs": [
+              {
+                "surface": "ahertaa",
+                "infinitive": "ahertaa",
+                "options": [
+                  {
+                    "form": "ahertaa"
+                  },
+                  {
+                    "form": "ahersin"
+                  },
+                  {
+                    "form": "ahersit"
+                  },
+                  {
+                    "form": "ahertavat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "valmis on kohta keko komea",
+            "start": 40.278867078201294,
+            "end": 45.52080287220764,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "oli"
+                  },
+                  {
+                    "form": "ovat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "muura muurahainen kortta kuljettaa",
+            "start": 45.52080287220764,
+            "end": 50.223279963760376,
+            "verbs": [
+              {
+                "surface": "kuljettaa",
+                "infinitive": "kuljettaa",
+                "options": [
+                  {
+                    "form": "kuljettaa"
+                  },
+                  {
+                    "form": "kuljetan"
+                  },
+                  {
+                    "form": "kuljetin"
+                  },
+                  {
+                    "form": "kuljettaa"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "heinä heinäsirkka soittaa viuluaan",
+            "start": 50.223279963760376,
+            "end": 55.35206986457825,
+            "verbs": [
+              {
+                "surface": "soittaa",
+                "infinitive": "soittaa",
+                "options": [
+                  {
+                    "form": "soittaa"
+                  },
+                  {
+                    "form": "soitin"
+                  },
+                  {
+                    "form": "soittavat"
+                  },
+                  {
+                    "form": "soitti"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "heinikossa hyppii sinne tänne vaan",
+            "start": 55.35206986457825,
+            "end": 60.24488508583069,
+            "verbs": [
+              {
+                "surface": "hyppii",
+                "infinitive": "hypätä",
+                "options": [
+                  {
+                    "form": "hyppii"
+                  },
+                  {
+                    "form": "hyppäsin"
+                  },
+                  {
+                    "form": "hyppäävät"
+                  },
+                  {
+                    "form": "hyppäsi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "pieni sinikello käypi nukkumaan",
+            "start": 60.24488508583069,
+            "end": 65.4488260114441,
+            "verbs": [
+              {
+                "surface": "käypi",
+                "infinitive": "käydä",
+                "options": [
+                  {
+                    "form": "käypi"
+                  },
+                  {
+                    "form": "käyn"
+                  },
+                  {
+                    "form": "käyvät"
+                  },
+                  {
+                    "form": "kävi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "heinä heinäsirkka soitta viuluaan",
+            "start": 65.4488260114441,
+            "end": 70.46090085694885,
+            "verbs": [
+              {
+                "surface": "soitta",
+                "infinitive": "soittaa",
+                "options": [
+                  {
+                    "form": "soitta"
+                  },
+                  {
+                    "form": "soittaa"
+                  },
+                  {
+                    "form": "soitin"
+                  },
+                  {
+                    "form": "soittavat"
+                  },
+                  {
+                    "form": "soitti"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "sääski sääski pieni surraa parvessaan",
+            "start": 70.46090085694885,
+            "end": 75.4854909294281,
+            "verbs": [
+              {
+                "surface": "surraa",
+                "infinitive": "surrata",
+                "options": [
+                  {
+                    "form": "surraa"
+                  },
+                  {
+                    "form": "surrasin"
+                  },
+                  {
+                    "form": "surraavat"
+                  },
+                  {
+                    "form": "surraisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "suvipäivä kuluu siinä touhussaan",
+            "start": 75.4854909294281,
+            "end": 80.25765112207031,
+            "verbs": [
+              {
+                "surface": "kuluu",
+                "infinitive": "kulua",
+                "options": [
+                  {
+                    "form": "kuluu"
+                  },
+                  {
+                    "form": "kului"
+                  },
+                  {
+                    "form": "kuluvat"
+                  },
+                  {
+                    "form": "kuluisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "illanvarjot saapuu siivet kimaltaa",
+            "start": 80.25765112207031,
+            "end": 85.39989596185303,
+            "verbs": [
+              {
+                "surface": "saapuu",
+                "infinitive": "saapua",
+                "options": [
+                  {
+                    "form": "saapuu"
+                  },
+                  {
+                    "form": "saapui"
+                  },
+                  {
+                    "form": "saapuvat"
+                  },
+                  {
+                    "form": "saapuisi"
+                  }
+                ]
+              },
+              {
+                "surface": "kimaltaa",
+                "infinitive": "kimaltaa",
+                "options": [
+                  {
+                    "form": "kimaltaa"
+                  },
+                  {
+                    "form": "kimaltavat"
+                  },
+                  {
+                    "form": "kimalteli"
+                  },
+                  {
+                    "form": "kimaltaisi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "sääski sääski pieni surraa parvessaan",
+            "start": 85.39989596185303,
+            "end": 90.55262098474121,
+            "verbs": [
+              {
+                "surface": "surraa",
+                "infinitive": "surrata",
+                "options": [
+                  {
+                    "form": "surraa"
+                  },
+                  {
+                    "form": "surrasin"
+                  },
+                  {
+                    "form": "surraavat"
+                  },
+                  {
+                    "form": "surraisi"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "hämä hämähäkki kutoo verkkojaan",
+            "start": 90.55262098474121,
+            "end": 95.97070784741211,
+            "verbs": [
+              {
+                "surface": "kutoo",
+                "infinitive": "kutoa",
+                "options": [
+                  {
+                    "form": "kutoo"
+                  },
+                  {
+                    "form": "kudoin"
+                  },
+                  {
+                    "form": "kutonee"
+                  },
+                  {
+                    "form": "kutoisit"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "pieni lintu lensi siihen katsomaan",
+            "start": 95.97070784741211,
+            "end": 100.95175622315979,
+            "verbs": [
+              {
+                "surface": "lensi",
+                "infinitive": "lentää",
+                "options": [
+                  {
+                    "form": "lensi"
+                  },
+                  {
+                    "form": "lennän"
+                  },
+                  {
+                    "form": "lentäisi"
+                  },
+                  {
+                    "form": "lentänyt"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "aurinko laski kauas vuorten taa",
+            "start": 100.95175622315979,
+            "end": 106.09500304005432,
+            "verbs": [
+              {
+                "surface": "laski",
+                "infinitive": "laskea",
+                "options": [
+                  {
+                    "form": "laski"
+                  },
+                  {
+                    "form": "lasken"
+                  },
+                  {
+                    "form": "laskisi"
+                  },
+                  {
+                    "form": "laskenut"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "hämä hämähäkki kutoo verkkojaan",
+            "start": 106.09500304005432,
+            "end": 111.48031683787536,
+            "verbs": [
+              {
+                "surface": "kutoo",
+                "infinitive": "kutoa",
+                "options": [
+                  {
+                    "form": "kutoo"
+                  },
+                  {
+                    "form": "kudoin"
+                  },
+                  {
+                    "form": "kutonee"
+                  },
+                  {
+                    "form": "kutoisit"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
