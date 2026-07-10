@@ -3143,5 +3143,405 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Kuuluuko, kuuluuko, kuuntelen - Paatso Samuel Shipway",
+    "videoId": "K2yKB_rp8Jc",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-10T07:11:25.104Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "täällä risto räppääjä ja supersalainen tehtävä",
+            "start": 8.777006022945965,
+            "end": 13.961631787086759,
+            "verbs": []
+          },
+          {
+            "text": "radiotaajuutta muuntelen",
+            "start": 13.961631787086759,
+            "end": 16.9687720995976,
+            "verbs": [
+              {
+                "surface": "muuntelen",
+                "infinitive": "muunnella",
+                "options": [
+                  {
+                    "form": "muuntelen"
+                  },
+                  {
+                    "form": "muuntelit"
+                  },
+                  {
+                    "form": "muunteli"
+                  },
+                  {
+                    "form": "muuntelivat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kuuluuko kuuluuko kuuntelen",
+            "start": 16.9687720995976,
+            "end": 20.169682403224698,
+            "verbs": [
+              {
+                "surface": "kuuluuko",
+                "infinitive": "kuulua",
+                "options": [
+                  {
+                    "form": "kuuluu"
+                  },
+                  {
+                    "form": "kuuluuko"
+                  },
+                  {
+                    "form": "kuuluvat"
+                  },
+                  {
+                    "form": "kuulun"
+                  }
+                ]
+              },
+              {
+                "surface": "kuuntelen",
+                "infinitive": "kuunnella",
+                "options": [
+                  {
+                    "form": "kuuntelen"
+                  },
+                  {
+                    "form": "kuuntelet"
+                  },
+                  {
+                    "form": "kuuntelee"
+                  },
+                  {
+                    "form": "kuuntelevat"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "täällä nelli nuudelipää kutsuu risto räppääjää",
+            "start": 20.169682403224698,
+            "end": 25.6,
+            "verbs": [
+              {
+                "surface": "kutsuu",
+                "infinitive": "kutsua",
+                "options": [
+                  {
+                    "form": "kutsuu"
+                  },
+                  {
+                    "form": "kutsuin"
+                  },
+                  {
+                    "form": "kutsuvat"
+                  },
+                  {
+                    "form": "kutsuisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "äänesi jonnekkin häviää",
+            "start": 25.6,
+            "end": 28.256510775736523,
+            "verbs": [
+              {
+                "surface": "häviää",
+                "infinitive": "hävitä",
+                "options": [
+                  {
+                    "form": "häviää"
+                  },
+                  {
+                    "form": "hävisi"
+                  },
+                  {
+                    "form": "häviävät"
+                  },
+                  {
+                    "form": "häviäisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tuleeko perille viesti tää",
+            "start": 28.256510775736523,
+            "end": 31.295690989197137,
+            "verbs": [
+              {
+                "surface": "tuleeko",
+                "infinitive": "tulla",
+                "options": [
+                  {
+                    "form": "tuleeko"
+                  },
+                  {
+                    "form": "tuli"
+                  },
+                  {
+                    "form": "tulevat"
+                  },
+                  {
+                    "form": "tulisin"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "sihinää kihinää",
+            "start": 31.295690989197137,
+            "end": 32.7,
+            "verbs": []
+          },
+          {
+            "text": "sähinää rähinää",
+            "start": 32.7,
+            "end": 34.3,
+            "verbs": []
+          },
+          {
+            "text": "rohinaa kohinaa",
+            "start": 34.3,
+            "end": 35.8,
+            "verbs": []
+          },
+          {
+            "text": "ulinaa hulinaa",
+            "start": 35.8,
+            "end": 37.1,
+            "verbs": []
+          },
+          {
+            "text": "rätinää lätinää",
+            "start": 37.1,
+            "end": 38.5,
+            "verbs": []
+          },
+          {
+            "text": "suhinaa puhinaa",
+            "start": 38.5,
+            "end": 39.9,
+            "verbs": []
+          },
+          {
+            "text": "rutinaa mutinaa",
+            "start": 39.9,
+            "end": 41.18237136630879,
+            "verbs": []
+          },
+          {
+            "text": "rahinaa kahinaa",
+            "start": 41.18237136630879,
+            "end": 52.25539643467841,
+            "verbs": []
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "täällä risto räppääjä ja supersalainen tehtävä",
+            "start": 52.25539643467841,
+            "end": 57.86138697305471,
+            "verbs": []
+          },
+          {
+            "text": "ääntäsi kunnolla kuule en",
+            "start": 57.86138697305471,
+            "end": 60.897549851458486,
+            "verbs": [
+              {
+                "surface": "kuule",
+                "infinitive": "kuulla",
+                "options": [
+                  {
+                    "form": "kuule"
+                  },
+                  {
+                    "form": "kuulen"
+                  },
+                  {
+                    "form": "kuulet"
+                  },
+                  {
+                    "form": "kuulee"
+                  },
+                  {
+                    "form": "kuulemme"
+                  }
+                ]
+              },
+              {
+                "surface": "en",
+                "infinitive": "ei",
+                "options": [
+                  {
+                    "form": "en"
+                  },
+                  {
+                    "form": "et"
+                  },
+                  {
+                    "form": "ei"
+                  },
+                  {
+                    "form": "emme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kuuluuko kuuluuko kuuntelen",
+            "start": 60.897549851458486,
+            "end": 63.947964196849995,
+            "verbs": [
+              {
+                "surface": "kuuluuko",
+                "infinitive": "kuulua",
+                "options": [
+                  {
+                    "form": "kuuluuko"
+                  },
+                  {
+                    "form": "kuulun"
+                  },
+                  {
+                    "form": "kuulut"
+                  },
+                  {
+                    "form": "kuuluu"
+                  },
+                  {
+                    "form": "kuulumme"
+                  }
+                ]
+              },
+              {
+                "surface": "kuuntelen",
+                "infinitive": "kuunnella",
+                "options": [
+                  {
+                    "form": "kuuntelen"
+                  },
+                  {
+                    "form": "kuuntelet"
+                  },
+                  {
+                    "form": "kuuntelee"
+                  },
+                  {
+                    "form": "kuuntelemme"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "täällä nelli nuudelipää kutsuu risto räppääjää",
+            "start": 63.947964196849995,
+            "end": 69.4,
+            "verbs": [
+              {
+                "surface": "kutsuu",
+                "infinitive": "kutsua",
+                "options": [
+                  {
+                    "form": "kutsuu"
+                  },
+                  {
+                    "form": "kutsuin"
+                  },
+                  {
+                    "form": "kutsuvat"
+                  },
+                  {
+                    "form": "kutsuisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "äänesi jonnekkin häviää",
+            "start": 69.4,
+            "end": 72.16989477784465,
+            "verbs": [
+              {
+                "surface": "häviää",
+                "infinitive": "hävitä",
+                "options": [
+                  {
+                    "form": "häviää"
+                  },
+                  {
+                    "form": "hävisi"
+                  },
+                  {
+                    "form": "häviävät"
+                  },
+                  {
+                    "form": "häviäisin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tuleeko perille viesti tää",
+            "start": 72.16989477784465,
+            "end": 75,
+            "verbs": [
+              {
+                "surface": "tuleeko",
+                "infinitive": "tulla",
+                "options": [
+                  {
+                    "form": "tuleeko"
+                  },
+                  {
+                    "form": "tuli"
+                  },
+                  {
+                    "form": "tulevat"
+                  },
+                  {
+                    "form": "tulisin"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
