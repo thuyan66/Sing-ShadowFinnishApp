@@ -3543,5 +3543,178 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Podcast 1: Tervetuloa Podcastimme",
+    "videoId": "20nVwG2IXWw",
+    "bcp47": "fi",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-10T10:15:04.868Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "hei ja tervetuloa suomen kielen podcastiimme",
+            "start": 0,
+            "end": 2.9,
+            "verbs": []
+          },
+          {
+            "text": "tänään puhumme aiheesta",
+            "start": 2.9,
+            "end": 4.7,
+            "verbs": [
+              {
+                "surface": "puhumme",
+                "infinitive": "puhua",
+                "options": [
+                  {
+                    "form": "puhun"
+                  },
+                  {
+                    "form": "puhut"
+                  },
+                  {
+                    "form": "puhuu"
+                  },
+                  {
+                    "form": "puhumme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "joka on monelle oppijalle todella tärkeä",
+            "start": 4.7,
+            "end": 7.7,
+            "verbs": [
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "olemme"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "miten voi puhua suomea luonnollisesti ilman pakotettua",
+            "start": 7.7,
+            "end": 11.5,
+            "verbs": [
+              {
+                "surface": "voi",
+                "infinitive": "voida",
+                "options": [
+                  {
+                    "form": "voi"
+                  },
+                  {
+                    "form": "voin"
+                  },
+                  {
+                    "form": "voivat"
+                  },
+                  {
+                    "form": "voisin"
+                  }
+                ]
+              },
+              {
+                "surface": "puhua",
+                "infinitive": "puhua",
+                "options": [
+                  {
+                    "form": "puhua"
+                  },
+                  {
+                    "form": "puhun"
+                  },
+                  {
+                    "form": "puhuu"
+                  },
+                  {
+                    "form": "puhuvat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "tai epävarmaa sävyä",
+            "start": 11.5,
+            "end": 13.8,
+            "verbs": []
+          },
+          {
+            "text": "annan tänään helppoja vinkkejä",
+            "start": 13.8,
+            "end": 16.2,
+            "verbs": [
+              {
+                "surface": "annan",
+                "infinitive": "antaa",
+                "options": [
+                  {
+                    "form": "annan"
+                  },
+                  {
+                    "form": "antaa"
+                  },
+                  {
+                    "form": "antaa"
+                  },
+                  {
+                    "form": "antavat"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ja teemme kaiken kuin oikean keskustelun",
+            "start": 16.2,
+            "end": 19.8,
+            "verbs": [
+              {
+                "surface": "teemme",
+                "infinitive": "tehdä",
+                "options": [
+                  {
+                    "form": "teemme"
+                  },
+                  {
+                    "form": "teen"
+                  },
+                  {
+                    "form": "tekee"
+                  },
+                  {
+                    "form": "tekevät"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
