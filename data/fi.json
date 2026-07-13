@@ -5154,5 +5154,773 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Minun ystäväni on kuin villasukka",
+    "videoId": "H9Gd-BjkA78",
+    "bcp47": "fi-FI",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-13T21:41:53.464Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "minun ystäväni on kuin villasukka",
+            "start": 7.369635087738038,
+            "end": 12.4,
+            "verbs": [
+              {
+                "surface": "ystäväni",
+                "infinitive": "ystävä",
+                "options": [
+                  {
+                    "form": "ystäväni"
+                  },
+                  {
+                    "form": "ystävän"
+                  },
+                  {
+                    "form": "ystävässä"
+                  },
+                  {
+                    "form": "ystävästä"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "olemme"
+                  }
+                ]
+              },
+              {
+                "surface": "kuin",
+                "infinitive": "kuu",
+                "options": [
+                  {
+                    "form": "kuin"
+                  },
+                  {
+                    "form": "kuun"
+                  },
+                  {
+                    "form": "kuussa"
+                  },
+                  {
+                    "form": "kuusta"
+                  }
+                ]
+              },
+              {
+                "surface": "villasukka",
+                "infinitive": "villasukka",
+                "options": [
+                  {
+                    "form": "villasukka"
+                  },
+                  {
+                    "form": "villasukan"
+                  },
+                  {
+                    "form": "villasukkaa"
+                  },
+                  {
+                    "form": "villasukassa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "joka talvella lämmittää",
+            "start": 12.4,
+            "end": 16.01638184550476,
+            "verbs": [
+              {
+                "surface": "talvella",
+                "infinitive": "talvi",
+                "options": [
+                  {
+                    "form": "talvella"
+                  },
+                  {
+                    "form": "talvin"
+                  },
+                  {
+                    "form": "talvia"
+                  },
+                  {
+                    "form": "talvissa"
+                  }
+                ]
+              },
+              {
+                "surface": "lämmittää",
+                "infinitive": "lämmittää",
+                "options": [
+                  {
+                    "form": "lämmittää"
+                  },
+                  {
+                    "form": "lämmitän"
+                  },
+                  {
+                    "form": "lämmität"
+                  },
+                  {
+                    "form": "lämmitämme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ja minun ystäväni on kuin niitynkukka",
+            "start": 16.01638184550476,
+            "end": 20.3,
+            "verbs": [
+              {
+                "surface": "ystäväni",
+                "infinitive": "ystävä",
+                "options": [
+                  {
+                    "form": "ystäväni"
+                  },
+                  {
+                    "form": "ystävän"
+                  },
+                  {
+                    "form": "ystävässä"
+                  },
+                  {
+                    "form": "ystävästä"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "olemme"
+                  }
+                ]
+              },
+              {
+                "surface": "kuin",
+                "infinitive": "kuu",
+                "options": [
+                  {
+                    "form": "kuin"
+                  },
+                  {
+                    "form": "kuun"
+                  },
+                  {
+                    "form": "kuussa"
+                  },
+                  {
+                    "form": "kuusta"
+                  }
+                ]
+              },
+              {
+                "surface": "niitynkukka",
+                "infinitive": "niitynkukka",
+                "options": [
+                  {
+                    "form": "niitynkukka"
+                  },
+                  {
+                    "form": "niitynkukan"
+                  },
+                  {
+                    "form": "niitynkukkaa"
+                  },
+                  {
+                    "form": "niitynkukassa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "joka saa minut hymyilemään",
+            "start": 20.3,
+            "end": 24.25,
+            "verbs": [
+              {
+                "surface": "saa",
+                "infinitive": "saada",
+                "options": [
+                  {
+                    "form": "saa"
+                  },
+                  {
+                    "form": "saan"
+                  },
+                  {
+                    "form": "saat"
+                  },
+                  {
+                    "form": "saamme"
+                  }
+                ]
+              },
+              {
+                "surface": "hymyilemään",
+                "infinitive": "hymyillä",
+                "options": [
+                  {
+                    "form": "hymyilemään"
+                  },
+                  {
+                    "form": "hymyilen"
+                  },
+                  {
+                    "form": "hymyilet"
+                  },
+                  {
+                    "form": "hymyilee"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ota kädestä kiinni tule kanssani rantaan",
+            "start": 24.25,
+            "end": 28.9,
+            "verbs": [
+              {
+                "surface": "ota",
+                "infinitive": "ottaa",
+                "options": [
+                  {
+                    "form": "ota"
+                  },
+                  {
+                    "form": "otan"
+                  },
+                  {
+                    "form": "otat"
+                  },
+                  {
+                    "form": "otamme"
+                  }
+                ]
+              },
+              {
+                "surface": "kädestä",
+                "infinitive": "käsi",
+                "options": [
+                  {
+                    "form": "kädestä"
+                  },
+                  {
+                    "form": "käsin"
+                  },
+                  {
+                    "form": "käsiä"
+                  },
+                  {
+                    "form": "käsissä"
+                  }
+                ]
+              },
+              {
+                "surface": "tule",
+                "infinitive": "tulla",
+                "options": [
+                  {
+                    "form": "tule"
+                  },
+                  {
+                    "form": "tulen"
+                  },
+                  {
+                    "form": "tulet"
+                  },
+                  {
+                    "form": "tulee"
+                  }
+                ]
+              },
+              {
+                "surface": "rantaan",
+                "infinitive": "ranta",
+                "options": [
+                  {
+                    "form": "rantaan"
+                  },
+                  {
+                    "form": "rannan"
+                  },
+                  {
+                    "form": "rantaa"
+                  },
+                  {
+                    "form": "rannassa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "vien sinut katsomaan",
+            "start": 28.9,
+            "end": 32.36541491798401,
+            "verbs": [
+              {
+                "surface": "vien",
+                "infinitive": "viedä",
+                "options": [
+                  {
+                    "form": "vien"
+                  },
+                  {
+                    "form": "viet"
+                  },
+                  {
+                    "form": "viemme"
+                  },
+                  {
+                    "form": "viette"
+                  }
+                ]
+              },
+              {
+                "surface": "katsomaan",
+                "infinitive": "katsoa",
+                "options": [
+                  {
+                    "form": "katsomaan"
+                  },
+                  {
+                    "form": "katsoo"
+                  },
+                  {
+                    "form": "katsoi"
+                  },
+                  {
+                    "form": "tule"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "miten aurinko laskee puiden taakse",
+            "start": 32.36541491798401,
+            "end": 36.5,
+            "verbs": [
+              {
+                "surface": "aurinko",
+                "infinitive": "aurinko",
+                "options": [
+                  {
+                    "form": "aurinko"
+                  },
+                  {
+                    "form": "auringon"
+                  },
+                  {
+                    "form": "aurinkoa"
+                  },
+                  {
+                    "form": "auringossa"
+                  }
+                ]
+              },
+              {
+                "surface": "laskee",
+                "infinitive": "laskea",
+                "options": [
+                  {
+                    "form": "laskee"
+                  },
+                  {
+                    "form": "lasken"
+                  },
+                  {
+                    "form": "lasket"
+                  },
+                  {
+                    "form": "laskemme"
+                  }
+                ]
+              },
+              {
+                "surface": "puiden",
+                "infinitive": "puu",
+                "options": [
+                  {
+                    "form": "puuta"
+                  },
+                  {
+                    "form": "puita"
+                  },
+                  {
+                    "form": "puina"
+                  },
+                  {
+                    "form": "puiden"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ja saa taivaan punertamaan",
+            "start": 36.5,
+            "end": 40.29112694087219,
+            "verbs": [
+              {
+                "surface": "saa",
+                "infinitive": "saada",
+                "options": [
+                  {
+                    "form": "saa"
+                  },
+                  {
+                    "form": "saan"
+                  },
+                  {
+                    "form": "saat"
+                  },
+                  {
+                    "form": "saamme"
+                  }
+                ]
+              },
+              {
+                "surface": "taivaan",
+                "infinitive": "taivas",
+                "options": [
+                  {
+                    "form": "taivaan"
+                  },
+                  {
+                    "form": "villasukka"
+                  },
+                  {
+                    "form": "aurinko"
+                  },
+                  {
+                    "form": "minä"
+                  }
+                ]
+              },
+              {
+                "surface": "punertamaan",
+                "infinitive": "punertaa",
+                "options": [
+                  {
+                    "form": "punertamaan"
+                  },
+                  {
+                    "form": "punerran"
+                  },
+                  {
+                    "form": "punerrat"
+                  },
+                  {
+                    "form": "punerramme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "minä olen vielä pikkuinen ja siksi tahtoisin",
+            "start": 40.29112694087219,
+            "end": 48.51236889700317,
+            "verbs": [
+              {
+                "surface": "minä",
+                "infinitive": "minä",
+                "options": [
+                  {
+                    "form": "minä"
+                  },
+                  {
+                    "form": "minän"
+                  },
+                  {
+                    "form": "minää"
+                  },
+                  {
+                    "form": "minässä"
+                  }
+                ]
+              },
+              {
+                "surface": "olen",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "olemme"
+                  },
+                  {
+                    "form": "olette"
+                  }
+                ]
+              },
+              {
+                "surface": "pikkuinen",
+                "infinitive": "pikkuinen",
+                "options": [
+                  {
+                    "form": "pikkuinen"
+                  },
+                  {
+                    "form": "aikuinen"
+                  },
+                  {
+                    "form": "paljon"
+                  },
+                  {
+                    "form": "villasukka"
+                  }
+                ]
+              },
+              {
+                "surface": "tahtoisin",
+                "infinitive": "tahtoa",
+                "options": [
+                  {
+                    "form": "tahtoisin"
+                  },
+                  {
+                    "form": "tahtoo"
+                  },
+                  {
+                    "form": "tahtovat"
+                  },
+                  {
+                    "form": "tahtoi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "oppia tän maailman paljon paremmin",
+            "start": 48.51236889700317,
+            "end": 56.28549304196167,
+            "verbs": [
+              {
+                "surface": "oppia",
+                "infinitive": "oppia",
+                "options": [
+                  {
+                    "form": "oppia"
+                  },
+                  {
+                    "form": "opin"
+                  },
+                  {
+                    "form": "opit"
+                  },
+                  {
+                    "form": "oppii"
+                  }
+                ]
+              },
+              {
+                "surface": "maailman",
+                "infinitive": "maailma",
+                "options": [
+                  {
+                    "form": "maailman"
+                  },
+                  {
+                    "form": "maailmaa"
+                  },
+                  {
+                    "form": "maailmassa"
+                  },
+                  {
+                    "form": "maailmasta"
+                  }
+                ]
+              },
+              {
+                "surface": "paljon",
+                "infinitive": "paljo",
+                "options": [
+                  {
+                    "form": "paljon"
+                  },
+                  {
+                    "form": "paljoa"
+                  },
+                  {
+                    "form": "paljossa"
+                  },
+                  {
+                    "form": "paljosta"
+                  }
+                ]
+              },
+              {
+                "surface": "paremmin",
+                "infinitive": "hyvä",
+                "options": [
+                  {
+                    "form": "paremmin"
+                  },
+                  {
+                    "form": "hyvän"
+                  },
+                  {
+                    "form": "hyvässä"
+                  },
+                  {
+                    "form": "hyvästä"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ja kun mä sitten joskus olen aikuinen",
+            "start": 56.28549304196167,
+            "end": 64,
+            "verbs": [
+              {
+                "surface": "olen",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "olemme"
+                  },
+                  {
+                    "form": "olette"
+                  }
+                ]
+              },
+              {
+                "surface": "aikuinen",
+                "infinitive": "aikuinen",
+                "options": [
+                  {
+                    "form": "aikuinen"
+                  },
+                  {
+                    "form": "paljon"
+                  },
+                  {
+                    "form": "pikkuinen"
+                  },
+                  {
+                    "form": "tule"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "niin toivon että oppimasta koskaan lakkaa en",
+            "start": 64,
+            "end": 72.16218416021728,
+            "verbs": [
+              {
+                "surface": "toivon",
+                "infinitive": "toivoa",
+                "options": [
+                  {
+                    "form": "toivon"
+                  },
+                  {
+                    "form": "toivot"
+                  },
+                  {
+                    "form": "toivomme"
+                  },
+                  {
+                    "form": "toivotte"
+                  }
+                ]
+              },
+              {
+                "surface": "oppimasta",
+                "infinitive": "oppia",
+                "options": [
+                  {
+                    "form": "oppimasta"
+                  },
+                  {
+                    "form": "opin"
+                  },
+                  {
+                    "form": "opit"
+                  },
+                  {
+                    "form": "oppii"
+                  }
+                ]
+              },
+              {
+                "surface": "lakkaa",
+                "infinitive": "lakata",
+                "options": [
+                  {
+                    "form": "lakkaa"
+                  },
+                  {
+                    "form": "puiden"
+                  },
+                  {
+                    "form": "ota"
+                  },
+                  {
+                    "form": "oppimasta"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
