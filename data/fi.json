@@ -3716,5 +3716,1443 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Huuliharppu (Antonio)",
+    "videoId": "AMcpfqdrj78",
+    "bcp47": "fi-FI",
+    "rtl": false,
+    "nonLatin": false,
+    "contributedAt": "2026-07-13T10:48:39.281Z",
+    "verses": [
+      {
+        "lines": [
+          {
+            "text": "yöbussissa viimeisinä",
+            "start": 6.371019952316284,
+            "end": 9.991720956130981,
+            "verbs": [
+              {
+                "surface": "yöbussissa",
+                "infinitive": "yöbussi",
+                "options": [
+                  {
+                    "form": "yöbussissa"
+                  },
+                  {
+                    "form": "yöbussin"
+                  },
+                  {
+                    "form": "yöbussia"
+                  },
+                  {
+                    "form": "yöbussista"
+                  }
+                ]
+              },
+              {
+                "surface": "viimeisinä",
+                "infinitive": "viimeinen",
+                "options": [
+                  {
+                    "form": "viimeisinä"
+                  },
+                  {
+                    "form": "vieraan"
+                  },
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "juustonaksuja"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "takapenkillä sinä ja minä",
+            "start": 9.991720956130981,
+            "end": 13.097669011444092,
+            "verbs": [
+              {
+                "surface": "takapenkillä",
+                "infinitive": "takapenkki",
+                "options": [
+                  {
+                    "form": "takapenkillä"
+                  },
+                  {
+                    "form": "takapenkkiin"
+                  },
+                  {
+                    "form": "takapenkkien"
+                  },
+                  {
+                    "form": "takapenkkeihin"
+                  }
+                ]
+              },
+              {
+                "surface": "minä",
+                "infinitive": "minä",
+                "options": [
+                  {
+                    "form": "minä"
+                  },
+                  {
+                    "form": "minän"
+                  },
+                  {
+                    "form": "minää"
+                  },
+                  {
+                    "form": "minässä"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kaikki kävi niin luonnollisesti",
+            "start": 13.097669011444092,
+            "end": 19.407599952316286,
+            "verbs": [
+              {
+                "surface": "kaikki",
+                "infinitive": "kaikki",
+                "options": [
+                  {
+                    "form": "kaikki"
+                  },
+                  {
+                    "form": "kaikin"
+                  },
+                  {
+                    "form": "kaikkia"
+                  },
+                  {
+                    "form": "kaikissa"
+                  }
+                ]
+              },
+              {
+                "surface": "kävi",
+                "infinitive": "käydä",
+                "options": [
+                  {
+                    "form": "kävi"
+                  },
+                  {
+                    "form": "käyn"
+                  },
+                  {
+                    "form": "käyt"
+                  },
+                  {
+                    "form": "käymme"
+                  }
+                ]
+              },
+              {
+                "surface": "luonnollisesti",
+                "infinitive": "luonnollinen",
+                "options": [
+                  {
+                    "form": "luonnollisesti"
+                  },
+                  {
+                    "form": "vaivattomasti"
+                  },
+                  {
+                    "form": "kauniimmin"
+                  },
+                  {
+                    "form": "huterasti"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "avasin siinä olutpullon",
+            "start": 19.407599952316286,
+            "end": 22.806243156402587,
+            "verbs": [
+              {
+                "surface": "avasin",
+                "infinitive": "avata",
+                "options": [
+                  {
+                    "form": "avasin"
+                  },
+                  {
+                    "form": "avasit"
+                  },
+                  {
+                    "form": "avasi"
+                  },
+                  {
+                    "form": "avasimme"
+                  }
+                ]
+              },
+              {
+                "surface": "olutpullon",
+                "infinitive": "olutpullo",
+                "options": [
+                  {
+                    "form": "olutpullon"
+                  },
+                  {
+                    "form": "yöbussissa"
+                  },
+                  {
+                    "form": "aamuyöllä"
+                  },
+                  {
+                    "form": "juustonaksuja"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "sanoit hei juustonaksuja mul on",
+            "start": 22.806243156402587,
+            "end": 25.978904979019166,
+            "verbs": [
+              {
+                "surface": "sanoit",
+                "infinitive": "sanoa",
+                "options": [
+                  {
+                    "form": "sanoit"
+                  },
+                  {
+                    "form": "sanon"
+                  },
+                  {
+                    "form": "sanot"
+                  },
+                  {
+                    "form": "sanoo"
+                  }
+                ]
+              },
+              {
+                "surface": "juustonaksuja",
+                "infinitive": "juustonaksu",
+                "options": [
+                  {
+                    "form": "juustonaksuja"
+                  },
+                  {
+                    "form": "juustonaksua"
+                  },
+                  {
+                    "form": "juustonaksuun"
+                  },
+                  {
+                    "form": "juustonaksuna"
+                  }
+                ]
+              },
+              {
+                "surface": "on",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "on"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "olemme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "matka koivukylään tunnin kesti",
+            "start": 25.978904979019166,
+            "end": 31.88998395803833,
+            "verbs": [
+              {
+                "surface": "matka",
+                "infinitive": "matka",
+                "options": [
+                  {
+                    "form": "matka"
+                  },
+                  {
+                    "form": "matkaa"
+                  },
+                  {
+                    "form": "matkaan"
+                  },
+                  {
+                    "form": "matkana"
+                  }
+                ]
+              },
+              {
+                "surface": "koivukylään",
+                "infinitive": "koivukylä",
+                "options": [
+                  {
+                    "form": "koivukylään"
+                  },
+                  {
+                    "form": "koivukylää"
+                  },
+                  {
+                    "form": "koivukylänä"
+                  },
+                  {
+                    "form": "koivukylien"
+                  }
+                ]
+              },
+              {
+                "surface": "tunnin",
+                "infinitive": "tunti",
+                "options": [
+                  {
+                    "form": "tunnin"
+                  },
+                  {
+                    "form": "tuntia"
+                  },
+                  {
+                    "form": "tunnissa"
+                  },
+                  {
+                    "form": "tunnista"
+                  }
+                ]
+              },
+              {
+                "surface": "kesti",
+                "infinitive": "kestää",
+                "options": [
+                  {
+                    "form": "kesti"
+                  },
+                  {
+                    "form": "kestän"
+                  },
+                  {
+                    "form": "kestät"
+                  },
+                  {
+                    "form": "kestämme"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "suihkun kautta makuuhuoneeseen",
+            "start": 31.88998395803833,
+            "end": 38.36668895613098,
+            "verbs": [
+              {
+                "surface": "suihkun",
+                "infinitive": "suihku",
+                "options": [
+                  {
+                    "form": "suihkun"
+                  },
+                  {
+                    "form": "suihkua"
+                  },
+                  {
+                    "form": "suihkussa"
+                  },
+                  {
+                    "form": "suihkusta"
+                  }
+                ]
+              },
+              {
+                "surface": "kautta",
+                "infinitive": "kausi",
+                "options": [
+                  {
+                    "form": "kautta"
+                  },
+                  {
+                    "form": "kausin"
+                  },
+                  {
+                    "form": "kausia"
+                  },
+                  {
+                    "form": "kausissa"
+                  }
+                ]
+              },
+              {
+                "surface": "makuuhuoneeseen",
+                "infinitive": "makuuhuone",
+                "options": [
+                  {
+                    "form": "makuuhuoneeseen"
+                  },
+                  {
+                    "form": "makuuhuoneen"
+                  },
+                  {
+                    "form": "makuuhuoneihin"
+                  },
+                  {
+                    "form": "makuuhuoneina"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "vieläkin siitä kierroksille meen",
+            "start": 38.36668895613098,
+            "end": 44.43588005722046,
+            "verbs": [
+              {
+                "surface": "siitä",
+                "infinitive": "siitä",
+                "options": [
+                  {
+                    "form": "siitä"
+                  },
+                  {
+                    "form": "sujui"
+                  },
+                  {
+                    "form": "istuin"
+                  },
+                  {
+                    "form": "kurlasit"
+                  }
+                ]
+              },
+              {
+                "surface": "kierroksille",
+                "infinitive": "kierros",
+                "options": [
+                  {
+                    "form": "kierroksille"
+                  },
+                  {
+                    "form": "koivukylään"
+                  },
+                  {
+                    "form": "juustonaksuja"
+                  },
+                  {
+                    "form": "minä"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "antonio",
+            "start": 44.43588005722046,
+            "end": 47.032324061035155,
+            "verbs": []
+          },
+          {
+            "text": "vuokses hyppäisin vaik hissikuiluun",
+            "start": 47.032324061035155,
+            "end": 51.13370502861023,
+            "verbs": [
+              {
+                "surface": "hyppäisin",
+                "infinitive": "hypätä",
+                "options": [
+                  {
+                    "form": "hyppäisin"
+                  },
+                  {
+                    "form": "istuin"
+                  },
+                  {
+                    "form": "kesti"
+                  },
+                  {
+                    "form": "on"
+                  }
+                ]
+              },
+              {
+                "surface": "hissikuiluun",
+                "infinitive": "hissikuilu",
+                "options": [
+                  {
+                    "form": "hissikuiluun"
+                  },
+                  {
+                    "form": "hissikuilua"
+                  },
+                  {
+                    "form": "hissikuiluna"
+                  },
+                  {
+                    "form": "hissikuilujen"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kaltaisiis ei vastaan tuu",
+            "start": 51.13370502861023,
+            "end": 57.07004604768372,
+            "verbs": [
+              {
+                "surface": "vastaan",
+                "infinitive": "vastata",
+                "options": [
+                  {
+                    "form": "vastaan"
+                  },
+                  {
+                    "form": "vastaat"
+                  },
+                  {
+                    "form": "vastaamme"
+                  },
+                  {
+                    "form": "vastaatte"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "antonio",
+            "start": 57.07004604768372,
+            "end": 60.10449200953674,
+            "verbs": []
+          },
+          {
+            "text": "soitit aamuyöllä huuliharppuu",
+            "start": 60.10449200953674,
+            "end": 64.0669209885559,
+            "verbs": [
+              {
+                "surface": "soitit",
+                "infinitive": "soittaa",
+                "options": [
+                  {
+                    "form": "soitit"
+                  },
+                  {
+                    "form": "soitan"
+                  },
+                  {
+                    "form": "soitat"
+                  },
+                  {
+                    "form": "soitamme"
+                  }
+                ]
+              },
+              {
+                "surface": "aamuyöllä",
+                "infinitive": "aamuyö",
+                "options": [
+                  {
+                    "form": "aamuyöllä"
+                  },
+                  {
+                    "form": "aamuyön"
+                  },
+                  {
+                    "form": "aamuyössä"
+                  },
+                  {
+                    "form": "aamuyöstä"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kauniimmin kuin kukaan muu",
+            "start": 64.0669209885559,
+            "end": 82.887835792099,
+            "verbs": [
+              {
+                "surface": "kauniimmin",
+                "infinitive": "kaunis",
+                "options": [
+                  {
+                    "form": "kauniimmin"
+                  },
+                  {
+                    "form": "vaivattomasti"
+                  },
+                  {
+                    "form": "luonnollisesti"
+                  },
+                  {
+                    "form": "huterasti"
+                  }
+                ]
+              },
+              {
+                "surface": "kuin",
+                "infinitive": "kuu",
+                "options": [
+                  {
+                    "form": "kuin"
+                  },
+                  {
+                    "form": "kuun"
+                  },
+                  {
+                    "form": "kuussa"
+                  },
+                  {
+                    "form": "kuusta"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "naista silmiin katsomalla",
+            "start": 82.887835792099,
+            "end": 86.56112803242493,
+            "verbs": [
+              {
+                "surface": "naista",
+                "infinitive": "nainen",
+                "options": [
+                  {
+                    "form": "naista"
+                  },
+                  {
+                    "form": "sisko"
+                  },
+                  {
+                    "form": "äiti"
+                  },
+                  {
+                    "form": "minä"
+                  }
+                ]
+              },
+              {
+                "surface": "silmiin",
+                "infinitive": "silmä",
+                "options": [
+                  {
+                    "form": "silmiin"
+                  },
+                  {
+                    "form": "silmän"
+                  },
+                  {
+                    "form": "silmää"
+                  },
+                  {
+                    "form": "silmässä"
+                  }
+                ]
+              },
+              {
+                "surface": "katsomalla",
+                "infinitive": "katsoa",
+                "options": [
+                  {
+                    "form": "katsomalla"
+                  },
+                  {
+                    "form": "katsoo"
+                  },
+                  {
+                    "form": "katsoi"
+                  },
+                  {
+                    "form": "vastaan"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "ja vieraan kielen tekniikalla",
+            "start": 86.56112803242493,
+            "end": 89.76453605340576,
+            "verbs": [
+              {
+                "surface": "vieraan",
+                "infinitive": "vieras",
+                "options": [
+                  {
+                    "form": "vieraan"
+                  },
+                  {
+                    "form": "viimeisinä"
+                  },
+                  {
+                    "form": "aamuyöllä"
+                  },
+                  {
+                    "form": "juustonaksuja"
+                  }
+                ]
+              },
+              {
+                "surface": "kielen",
+                "infinitive": "kieli",
+                "options": [
+                  {
+                    "form": "kielen"
+                  },
+                  {
+                    "form": "kielin"
+                  },
+                  {
+                    "form": "kieliä"
+                  },
+                  {
+                    "form": "kielissä"
+                  }
+                ]
+              },
+              {
+                "surface": "tekniikalla",
+                "infinitive": "tekniikka",
+                "options": [
+                  {
+                    "form": "tekniikalla"
+                  },
+                  {
+                    "form": "tekniikan"
+                  },
+                  {
+                    "form": "tekniikkaa"
+                  },
+                  {
+                    "form": "tekniikassa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kaikki sujui niin vaivattomasti",
+            "start": 89.76453605340576,
+            "end": 96.15134280354309,
+            "verbs": [
+              {
+                "surface": "kaikki",
+                "infinitive": "kaikki",
+                "options": [
+                  {
+                    "form": "kaikki"
+                  },
+                  {
+                    "form": "kaikin"
+                  },
+                  {
+                    "form": "kaikkia"
+                  },
+                  {
+                    "form": "kaikissa"
+                  }
+                ]
+              },
+              {
+                "surface": "sujui",
+                "infinitive": "sujua",
+                "options": [
+                  {
+                    "form": "sujui"
+                  },
+                  {
+                    "form": "sujun"
+                  },
+                  {
+                    "form": "sujut"
+                  },
+                  {
+                    "form": "sujuu"
+                  }
+                ]
+              },
+              {
+                "surface": "vaivattomasti",
+                "infinitive": "vaivaton",
+                "options": [
+                  {
+                    "form": "vaivattomasti"
+                  },
+                  {
+                    "form": "vaivatonna"
+                  },
+                  {
+                    "form": "huterasti"
+                  },
+                  {
+                    "form": "kauniimmin"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "suusi kurlasit pepsi maxil",
+            "start": 96.15134280354309,
+            "end": 99.37424295040894,
+            "verbs": [
+              {
+                "surface": "suusi",
+                "infinitive": "suu",
+                "options": [
+                  {
+                    "form": "suusi"
+                  },
+                  {
+                    "form": "suun"
+                  },
+                  {
+                    "form": "suussa"
+                  },
+                  {
+                    "form": "suusta"
+                  }
+                ]
+              },
+              {
+                "surface": "kurlasit",
+                "infinitive": "kurlata",
+                "options": [
+                  {
+                    "form": "kurlasit"
+                  },
+                  {
+                    "form": "kurlaan"
+                  },
+                  {
+                    "form": "kurlaat"
+                  },
+                  {
+                    "form": "kurlaamme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "lähdit luotani aamuun taksil",
+            "start": 99.37424295040894,
+            "end": 102.72879694468689,
+            "verbs": [
+              {
+                "surface": "lähdit",
+                "infinitive": "lähteä",
+                "options": [
+                  {
+                    "form": "lähdit"
+                  },
+                  {
+                    "form": "lähtee"
+                  },
+                  {
+                    "form": "lähtevät"
+                  },
+                  {
+                    "form": "lähti"
+                  }
+                ]
+              },
+              {
+                "surface": "aamuun",
+                "infinitive": "aamu",
+                "options": [
+                  {
+                    "form": "aamuun"
+                  },
+                  {
+                    "form": "aamun"
+                  },
+                  {
+                    "form": "aamua"
+                  },
+                  {
+                    "form": "aamussa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "istuin sängyn reunalla huterasti",
+            "start": 102.72879694468689,
+            "end": 108.78907500572204,
+            "verbs": [
+              {
+                "surface": "istuin",
+                "infinitive": "istua",
+                "options": [
+                  {
+                    "form": "istuin"
+                  },
+                  {
+                    "form": "istun"
+                  },
+                  {
+                    "form": "istut"
+                  },
+                  {
+                    "form": "istuu"
+                  }
+                ]
+              },
+              {
+                "surface": "sängyn",
+                "infinitive": "sänky",
+                "options": [
+                  {
+                    "form": "sängyn"
+                  },
+                  {
+                    "form": "sänkyä"
+                  },
+                  {
+                    "form": "sängyssä"
+                  },
+                  {
+                    "form": "sängystä"
+                  }
+                ]
+              },
+              {
+                "surface": "reunalla",
+                "infinitive": "reuna",
+                "options": [
+                  {
+                    "form": "reunalla"
+                  },
+                  {
+                    "form": "reunan"
+                  },
+                  {
+                    "form": "reunaa"
+                  },
+                  {
+                    "form": "reunassa"
+                  }
+                ]
+              },
+              {
+                "surface": "huterasti",
+                "infinitive": "hutera",
+                "options": [
+                  {
+                    "form": "huterasti"
+                  },
+                  {
+                    "form": "huteraa"
+                  },
+                  {
+                    "form": "huteraan"
+                  },
+                  {
+                    "form": "huterana"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "tajusin mul ei oo sun numeroo",
+            "start": 108.78907500572204,
+            "end": 114.98084712397767,
+            "verbs": [
+              {
+                "surface": "tajusin",
+                "infinitive": "tajuta",
+                "options": [
+                  {
+                    "form": "tajusin"
+                  },
+                  {
+                    "form": "tajuan"
+                  },
+                  {
+                    "form": "tajuat"
+                  },
+                  {
+                    "form": "tajuaa"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "perääs juoksin ilman housui ja puseroo",
+            "start": 114.98084712397767,
+            "end": 121.14148502288819,
+            "verbs": [
+              {
+                "surface": "juoksin",
+                "infinitive": "juosta",
+                "options": [
+                  {
+                    "form": "juoksin"
+                  },
+                  {
+                    "form": "kävi"
+                  },
+                  {
+                    "form": "olla"
+                  },
+                  {
+                    "form": "siitä"
+                  }
+                ]
+              },
+              {
+                "surface": "ilman",
+                "infinitive": "ilma",
+                "options": [
+                  {
+                    "form": "ilman"
+                  },
+                  {
+                    "form": "ilmaa"
+                  },
+                  {
+                    "form": "ilmassa"
+                  },
+                  {
+                    "form": "ilmasta"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "antonio",
+            "start": 121.14148502288819,
+            "end": 123.89103881307983,
+            "verbs": []
+          },
+          {
+            "text": "vuokses hyppäisin vaik hissikuiluun",
+            "start": 123.89103881307983,
+            "end": 127.9,
+            "verbs": [
+              {
+                "surface": "hyppäisin",
+                "infinitive": "hypätä",
+                "options": [
+                  {
+                    "form": "hyppäisin"
+                  },
+                  {
+                    "form": "sanoit"
+                  },
+                  {
+                    "form": "olla"
+                  },
+                  {
+                    "form": "juoksin"
+                  }
+                ]
+              },
+              {
+                "surface": "hissikuiluun",
+                "infinitive": "hissikuilu",
+                "options": [
+                  {
+                    "form": "hissikuiluun"
+                  },
+                  {
+                    "form": "hissikuilua"
+                  },
+                  {
+                    "form": "hissikuiluna"
+                  },
+                  {
+                    "form": "hissikuilujen"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kaltaisiis ei vastaan tuu",
+            "start": 127.9,
+            "end": 133.85286613542175,
+            "verbs": [
+              {
+                "surface": "vastaan",
+                "infinitive": "vastata",
+                "options": [
+                  {
+                    "form": "vastaan"
+                  },
+                  {
+                    "form": "vastaat"
+                  },
+                  {
+                    "form": "vastaamme"
+                  },
+                  {
+                    "form": "vastaatte"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "antonio",
+            "start": 133.85286613542175,
+            "end": 136.91870504959107,
+            "verbs": []
+          },
+          {
+            "text": "soitit aamuyöllä huuliharppuu",
+            "start": 136.91870504959107,
+            "end": 140.7,
+            "verbs": [
+              {
+                "surface": "soitit",
+                "infinitive": "soittaa",
+                "options": [
+                  {
+                    "form": "soitit"
+                  },
+                  {
+                    "form": "soitan"
+                  },
+                  {
+                    "form": "soitat"
+                  },
+                  {
+                    "form": "soitamme"
+                  }
+                ]
+              },
+              {
+                "surface": "aamuyöllä",
+                "infinitive": "aamuyö",
+                "options": [
+                  {
+                    "form": "aamuyöllä"
+                  },
+                  {
+                    "form": "aamuyön"
+                  },
+                  {
+                    "form": "aamuyössä"
+                  },
+                  {
+                    "form": "aamuyöstä"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "kauniimmin kuin kukaan muu",
+            "start": 140.7,
+            "end": 159.8,
+            "verbs": [
+              {
+                "surface": "kauniimmin",
+                "infinitive": "kaunis",
+                "options": [
+                  {
+                    "form": "kauniimmin"
+                  },
+                  {
+                    "form": "huterasti"
+                  },
+                  {
+                    "form": "vaivattomasti"
+                  },
+                  {
+                    "form": "luonnollisesti"
+                  }
+                ]
+              },
+              {
+                "surface": "kuin",
+                "infinitive": "kuu",
+                "options": [
+                  {
+                    "form": "kuin"
+                  },
+                  {
+                    "form": "kuun"
+                  },
+                  {
+                    "form": "kuussa"
+                  },
+                  {
+                    "form": "kuusta"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lines": [
+          {
+            "text": "mut ei se auto mikään taksi lienyt",
+            "start": 159.8,
+            "end": 166.5,
+            "verbs": [
+              {
+                "surface": "auto",
+                "infinitive": "auto",
+                "options": [
+                  {
+                    "form": "auto"
+                  },
+                  {
+                    "form": "autoa"
+                  },
+                  {
+                    "form": "autoon"
+                  },
+                  {
+                    "form": "autona"
+                  }
+                ]
+              },
+              {
+                "surface": "taksi",
+                "infinitive": "taksi",
+                "options": [
+                  {
+                    "form": "taksi"
+                  },
+                  {
+                    "form": "taksia"
+                  },
+                  {
+                    "form": "taksiin"
+                  },
+                  {
+                    "form": "taksina"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "joka pois sinut luotani vie nyt",
+            "start": 166.5,
+            "end": 172.62771096948242,
+            "verbs": [
+              {
+                "surface": "vie",
+                "infinitive": "viedä",
+                "options": [
+                  {
+                    "form": "vie"
+                  },
+                  {
+                    "form": "vien"
+                  },
+                  {
+                    "form": "viet"
+                  },
+                  {
+                    "form": "viemme"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "sen täytyi olla sun sisko tai äiti",
+            "start": 172.62771096948242,
+            "end": 176.1,
+            "verbs": [
+              {
+                "surface": "täytyi",
+                "infinitive": "täytyä",
+                "options": [
+                  {
+                    "form": "täytyi"
+                  },
+                  {
+                    "form": "täytyy"
+                  },
+                  {
+                    "form": "avasin"
+                  },
+                  {
+                    "form": "kurlasit"
+                  }
+                ]
+              },
+              {
+                "surface": "olla",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "olla"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "olemme"
+                  }
+                ]
+              },
+              {
+                "surface": "sisko",
+                "infinitive": "sisko",
+                "options": [
+                  {
+                    "form": "sisko"
+                  },
+                  {
+                    "form": "siskon"
+                  },
+                  {
+                    "form": "siskoa"
+                  },
+                  {
+                    "form": "siskossa"
+                  }
+                ]
+              },
+              {
+                "surface": "äiti",
+                "infinitive": "äiti",
+                "options": [
+                  {
+                    "form": "äiti"
+                  },
+                  {
+                    "form": "äidin"
+                  },
+                  {
+                    "form": "äitiä"
+                  },
+                  {
+                    "form": "äidissä"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "sen täytyi olla sun sisko tai äiti",
+            "start": 176.1,
+            "end": 180.2017641373291,
+            "verbs": [
+              {
+                "surface": "täytyi",
+                "infinitive": "täytyä",
+                "options": [
+                  {
+                    "form": "täytyi"
+                  },
+                  {
+                    "form": "täytyy"
+                  },
+                  {
+                    "form": "soitit"
+                  },
+                  {
+                    "form": "kurlasit"
+                  }
+                ]
+              },
+              {
+                "surface": "olla",
+                "infinitive": "olla",
+                "options": [
+                  {
+                    "form": "olla"
+                  },
+                  {
+                    "form": "olen"
+                  },
+                  {
+                    "form": "olet"
+                  },
+                  {
+                    "form": "olemme"
+                  }
+                ]
+              },
+              {
+                "surface": "sisko",
+                "infinitive": "sisko",
+                "options": [
+                  {
+                    "form": "sisko"
+                  },
+                  {
+                    "form": "siskon"
+                  },
+                  {
+                    "form": "siskoa"
+                  },
+                  {
+                    "form": "siskossa"
+                  }
+                ]
+              },
+              {
+                "surface": "äiti",
+                "infinitive": "äiti",
+                "options": [
+                  {
+                    "form": "äiti"
+                  },
+                  {
+                    "form": "äidin"
+                  },
+                  {
+                    "form": "äitiä"
+                  },
+                  {
+                    "form": "äidissä"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
